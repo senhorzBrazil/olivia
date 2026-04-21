@@ -30,7 +30,7 @@
 
   <script>
     const CONFIG = {
-      CHECKOUT_URL: 'https://pay.hotmart.com/O105482548M',
+      CHECKOUT_URL: 'https://pay.hotmart.com/O105482548M?off=e590xr5h&checkoutMode=10',
       WEBHOOK_URL: 'https://hook.us2.make.com/b11q45ri35fiortnt76pmihffo43vzi0'
     };
 
@@ -1695,7 +1695,7 @@
           <div class="flex-1">
             <div class="flex items-start justify-between flex-wrap gap-2 mb-2">
               <h3 class="text-lg md:text-xl font-bold">BONO #1 · Lista de Links Directos</h3>
-              <span class="text-sm line-through text-muted">$14.900</span>
+              <span class="text-sm line-through text-muted">US$4,90</span>
             </div>
             <p class="text-sm text-muted leading-relaxed">
               PDF exclusivo con los mejores productos del ajuar ya seleccionados, con links directos
@@ -1710,7 +1710,7 @@
           <div class="flex-1">
             <div class="flex items-start justify-between flex-wrap gap-2 mb-2">
               <h3 class="text-lg md:text-xl font-bold">BONO #2 · Ajuar Personalizado con IA</h3>
-              <span class="text-sm line-through text-muted">$11.900</span>
+              <span class="text-sm line-through text-muted">US$3,90</span>
             </div>
             <p class="text-sm text-muted leading-relaxed" id="bono2-desc">
               Comando listo para copiar y pegar en ChatGPT. Responde 6 preguntas y la IA arma
@@ -1725,7 +1725,7 @@
           <div class="flex-1">
             <div class="flex items-start justify-between flex-wrap gap-2 mb-2">
               <h3 class="text-lg md:text-xl font-bold">BONO #3 · Guía Express de Documentos</h3>
-              <span class="text-sm line-through text-muted">$8.900</span>
+              <span class="text-sm line-through text-muted">US$2,90</span>
             </div>
             <p class="text-sm text-muted leading-relaxed" id="bono3-desc">
               Todo lo que necesitas para registrar tu bebé en Colombia: registro civil, afiliación a EPS,
@@ -1755,7 +1755,7 @@
         <div class="bg-graphite text-white p-6 md:p-8 text-center">
           <p class="text-sm uppercase tracking-wider text-white/60 mb-2">Oferta de lanzamiento</p>
           <h2 class="text-2xl md:text-3xl font-extrabold leading-tight" id="oferta-title">
-            Todo el paquete completo <br> por menos de lo que cuesta un domicilio
+            Todo el paquete completo <br> por menos de lo que cuesta un café
           </h2>
         </div>
 
@@ -1775,22 +1775,29 @@
           <div class="border-t border-dashed border-muted/30 pt-6 mb-6">
             <div class="flex justify-between text-sm text-muted mb-2">
               <span>Valor total del paquete:</span>
-              <span class="font-semibold">$89.700 COP</span>
+              <span class="font-semibold">US$29,70</span>
             </div>
             <div class="flex justify-between text-sm text-muted mb-2">
               <span>Precio regular:</span>
-              <span class="line-through">$19.900 COP</span>
+              <span class="line-through">US$19,90</span>
             </div>
             <div class="flex justify-between items-baseline pt-3 border-t border-muted/20">
               <span class="text-lg font-bold">HOY pagas solo:</span>
               <div class="text-right">
-                <div class="text-4xl md:text-5xl font-extrabold text-urgent">$ 8.816</div>
-                <div class="text-xs text-muted">COP · o 6 cuotas de $ 1.469 en tarjeta de crédito</div>
+                <div class="text-4xl md:text-5xl font-extrabold text-urgent">US$ 6,97</div>
+                <div class="text-xs text-muted">Pago único · Sin mensualidades</div>
               </div>
+            </div>
+            <div class="mt-3 p-3 rounded-xl flex items-start gap-2" style="background: color-mix(in srgb, var(--secondary) 20%, #F8FAFD);">
+              <i data-lucide="info" class="w-4 h-4 flex-shrink-0 mt-0.5" style="color: var(--primary-deep);"></i>
+              <p class="text-xs text-graphite leading-relaxed">
+                <strong>El valor será convertido automáticamente a tu moneda local</strong>
+                (COP, MXN, ARS, BRL, etc.) al momento del pago, según la tasa del día.
+              </p>
             </div>
           </div>
 
-          <a href="https://pay.hotmart.com/O105482548M" target="_blank" rel="noopener" onclick="trackPurchase()" class="cta-pulse block w-full text-center bg-urgent hover:opacity-90 text-white font-extrabold py-5 px-6 rounded-2xl shadow-xl transform hover:scale-[1.02] transition mb-4" style="font-size: clamp(15px, 3.5vw, 20px); line-height: 1.3;">
+          <a href="https://pay.hotmart.com/O105482548M?off=e590xr5h&amp;checkoutMode=10" target="_blank" rel="noopener" onclick="trackPurchase()" class="cta-pulse block w-full text-center bg-urgent hover:opacity-90 text-white font-extrabold py-5 px-6 rounded-2xl shadow-xl transform hover:scale-[1.02] transition mb-4" style="font-size: clamp(15px, 3.5vw, 20px); line-height: 1.3;">
             <span id="cta-oferta" class="inline-block">SÍ, QUIERO ORGANIZARME YA</span>
             <span class="inline-block ml-2 align-middle" style="transform: translateY(-1px);">→</span>
           </a>
@@ -1834,7 +1841,46 @@
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-cream2">
+  <!-- ═══ SEÇÃO CONTATO WHATSAPP (MOVIDA PARA CIMA) ═══ -->
+  <section id="contacto" class="py-16 md:py-20 bg-cream2">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="wa-card rounded-3xl shadow-lg p-8 md:p-12 text-center">
+        <div class="wa-icon-bubble w-20 h-20 mx-auto mb-5 rounded-full flex items-center justify-center">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-extrabold mb-3">
+          ¿Tienes alguna <span style="color: var(--whatsapp-dark);">duda</span>?
+        </h2>
+        <p class="text-base md:text-lg text-muted leading-relaxed mb-7 max-w-xl mx-auto">
+          Escríbenos directamente por WhatsApp y te responderemos lo antes posible.
+          Estamos aquí para ayudarte en lo que necesites 💬
+        </p>
+
+        <a
+          href="https://wa.me/5585999693772?text=Hola!%20Tengo%20una%20duda%20sobre%20la%20Gu%C3%ADa%20del%20Embarazo%20Organizado"
+          target="_blank"
+          rel="noopener"
+          class="wa-btn wa-pulse inline-flex items-center gap-3 text-white font-bold text-base md:text-lg px-8 py-4 rounded-full"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Hablar por WhatsApp
+        </a>
+
+        <p class="flex items-center justify-center gap-2 text-xs text-muted mt-4">
+          <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+          Respuesta rápida · Lun a Sáb de 8am a 8pm
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- ═══ FIM SEÇÃO CONTATO WHATSAPP ═══ -->
+
+  <section class="py-16 md:py-24 bg-cream">
     <div class="max-w-3xl mx-auto px-5">
       <div class="text-center mb-10">
         <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Dudas frecuentes</h2>
@@ -1858,7 +1904,20 @@
             <i data-lucide="chevron-down" class="chev w-5 h-5 text-primary-dark"></i>
           </summary>
           <div class="px-5 pb-5 text-muted text-sm leading-relaxed">
-            Es un pago <strong>único</strong>. Pagas $ 8.816 una sola vez (o en 6 cuotas de $ 1.469) y tienes acceso de por vida.
+            Es un pago <strong>único</strong>. Pagas US$ 6,97 una sola vez y tienes acceso de por vida.
+            <strong>El valor será convertido automáticamente a tu moneda local</strong> (COP, MXN, ARS, BRL, etc.)
+            al momento del pago, según la tasa del día.
+          </div>
+        </details>
+        <details class="bg-white rounded-2xl shadow-sm overflow-hidden">
+          <summary class="p-5 font-semibold cursor-pointer flex justify-between items-center">
+            <span>¿En qué moneda voy a pagar?</span>
+            <i data-lucide="chevron-down" class="chev w-5 h-5 text-primary-dark"></i>
+          </summary>
+          <div class="px-5 pb-5 text-muted text-sm leading-relaxed">
+            El precio base es de <strong>US$ 6,97 (dólares)</strong>, pero en la pantalla de pago el valor
+            se convierte automáticamente a tu moneda local según la tasa del día. Tú ves el precio exacto
+            en pesos colombianos (o la moneda de tu país) <strong>antes de confirmar</strong> la compra.
           </div>
         </details>
         <details class="bg-white rounded-2xl shadow-sm overflow-hidden">
@@ -1923,12 +1982,12 @@
       </p>
 
       <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 mb-8">
-        <p class="text-sm text-white/70 mb-1">La diferencia son</p>
-        <p class="text-4xl md:text-5xl font-extrabold text-primary mb-1">$ 8.816 COP</p>
-        <p class="text-xs text-white/60">o 6 cuotas de $ 1.469 · El impacto en tu embarazo, no tiene precio.</p>
+        <p class="text-sm text-white/70 mb-1">La diferencia son apenas</p>
+        <p class="text-4xl md:text-5xl font-extrabold text-primary mb-1">US$ 6,97</p>
+        <p class="text-xs text-white/60">Convertido a tu moneda local · El impacto en tu embarazo, no tiene precio.</p>
       </div>
 
-      <a href="https://pay.hotmart.com/O105482548M" target="_blank" rel="noopener" onclick="trackPurchase()" class="cta-pulse inline-flex items-center gap-2 bg-urgent hover:opacity-90 text-white font-extrabold text-lg md:text-xl px-10 py-5 rounded-full shadow-2xl transform hover:scale-105 transition">
+      <a href="https://pay.hotmart.com/O105482548M?off=e590xr5h&amp;checkoutMode=10" target="_blank" rel="noopener" onclick="trackPurchase()" class="cta-pulse inline-flex items-center gap-2 bg-urgent hover:opacity-90 text-white font-extrabold text-lg md:text-xl px-10 py-5 rounded-full shadow-2xl transform hover:scale-105 transition">
         QUIERO MI GUÍA AHORA
         <i data-lucide="arrow-right" class="w-6 h-6"></i>
       </a>
@@ -1940,45 +1999,6 @@
       </p>
     </div>
   </section>
-
-  <!-- ═══ SEÇÃO CONTATO WHATSAPP ═══ -->
-  <section id="contacto" class="py-16 md:py-20 bg-cream">
-    <div class="max-w-3xl mx-auto px-5">
-      <div class="wa-card rounded-3xl shadow-lg p-8 md:p-12 text-center">
-        <div class="wa-icon-bubble w-20 h-20 mx-auto mb-5 rounded-full flex items-center justify-center">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-        </div>
-
-        <h2 class="text-2xl md:text-3xl font-extrabold mb-3">
-          ¿Tienes alguna <span style="color: var(--whatsapp-dark);">duda</span>?
-        </h2>
-        <p class="text-base md:text-lg text-muted leading-relaxed mb-7 max-w-xl mx-auto">
-          Escríbenos directamente por WhatsApp y te responderemos lo antes posible.
-          Estamos aquí para ayudarte en lo que necesites 💬
-        </p>
-
-        <a
-          href="https://wa.me/5585999693772?text=Hola!%20Tengo%20una%20duda%20sobre%20la%20Gu%C3%ADa%20del%20Embarazo%20Organizado"
-          target="_blank"
-          rel="noopener"
-          class="wa-btn wa-pulse inline-flex items-center gap-3 text-white font-bold text-base md:text-lg px-8 py-4 rounded-full"
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-          Hablar por WhatsApp
-        </a>
-
-        <p class="flex items-center justify-center gap-2 text-xs text-muted mt-4">
-          <i data-lucide="clock" class="w-3.5 h-3.5"></i>
-          Respuesta rápida · Lun a Sáb de 8am a 8pm
-        </p>
-      </div>
-    </div>
-  </section>
-  <!-- ═══ FIM SEÇÃO CONTATO WHATSAPP ═══ -->
 
   <footer class="bg-cream py-8 border-t border-muted/20">
     <div class="max-w-5xl mx-auto px-5 text-center text-xs text-muted">
@@ -1995,7 +2015,7 @@
 
   <a href="#oferta" class="hidden md:flex fixed bottom-6 right-6 z-40 bg-urgent hover:opacity-90 text-white font-bold px-5 py-3 rounded-full shadow-2xl items-center gap-2 transform hover:scale-105 transition">
     <i data-lucide="gift" class="w-4 h-4"></i>
-    $ 8.816 · Quiero ya
+    US$ 6,97 · Quiero ya
   </a>
 
   </div>
@@ -2130,8 +2150,8 @@
       if (typeof fbq === 'function') {
         fbq('track', 'InitiateCheckout', {
           content_name: 'Guía del Embarazo Organizado',
-          currency: 'COP',
-          value: 8816
+          currency: 'USD',
+          value: 6.97
         });
       }
       return true;
