@@ -29,6 +29,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <script>
+    // ═══════════════════════════════════════════════
+    // ⚙️  CONFIGURAÇÃO — EDITE AQUI
+    // ═══════════════════════════════════════════════
+    const CONFIG = {
+      // Link de checkout da Hotmart
+      CHECKOUT_URL: 'https://pay.hotmart.com/O105482548M',
+      // URL do webhook — cole aqui quando tiver
+      WEBHOOK_URL: 'https://SEU-WEBHOOK-AQUI.com/endpoint'
+    };
+    // ═══════════════════════════════════════════════
+
     tailwind.config = {
       theme: {
         extend: {
@@ -71,21 +82,19 @@
       letter-spacing: -0.02em;
     }
 
-    /* ════════ VARIÁVEIS CSS — TROCADAS VIA JS ════════ */
     :root {
-      /* Default: neutro (rosa premium + azul) — baseado na tela premium */
-      --primary:       #FFA6BA;  /* rose-300 */
-      --primary-dark:  #F45B7C;  /* rose-500 */
-      --primary-deep:  #D9376A;  /* rose-600 */
+      --primary:       #FFA6BA;
+      --primary-dark:  #F45B7C;
+      --primary-deep:  #D9376A;
       --secondary:     #A8C8E8;
       --success:       #B8D8BE;
       --success-dark:  #7FB48A;
-      --cream:         #FFF5F7;  /* rose-50 */
-      --cream2:        #FFE4EA;  /* rose-100 */
-      --bg-page:       #F3E9EC;  /* fundo da página */
-      --graphite:      #1F1420;  /* ink-900 */
-      --graphite-soft: #4A3844;  /* ink-700 */
-      --muted:         #8A7A84;  /* ink-500 */
+      --cream:         #FFF5F7;
+      --cream2:        #FFE4EA;
+      --bg-page:       #F3E9EC;
+      --graphite:      #1F1420;
+      --graphite-soft: #4A3844;
+      --muted:         #8A7A84;
       --urgent:        #E63946;
       --gradient-from: #FFB7C9;
       --gradient-to:   #FF94AE;
@@ -93,7 +102,6 @@
       --gradient-radial-2: #FFE4EA;
     }
 
-    /* Tema MENINA — rosa ainda mais intenso */
     body.theme-girl {
       --primary:       #FFA6BA;
       --primary-dark:  #F45B7C;
@@ -110,7 +118,6 @@
       --gradient-radial-2: #FFE4EA;
     }
 
-    /* Tema MENINO — azul premium profundo */
     body.theme-boy {
       --primary:       #9FC2E8;
       --primary-dark:  #4A90D4;
@@ -127,7 +134,6 @@
       --gradient-radial-2: #DEECF7;
     }
 
-    /* Classes Tailwind-like usando as variáveis */
     .bg-primary      { background-color: var(--primary); }
     .bg-primary-dark { background-color: var(--primary-dark); }
     .bg-secondary    { background-color: var(--secondary); }
@@ -153,12 +159,10 @@
       background: linear-gradient(135deg, var(--gradient-from) 0%, var(--gradient-to) 100%);
     }
 
-    /* Transição suave ao trocar tema */
     body, .bg-primary, .bg-cream, .bg-cream2, .gradient-maternal {
       transition: background-color 0.5s ease, background 0.5s ease, color 0.5s ease, border-color 0.5s ease;
     }
 
-    /* CTA pulsante */
     .cta-pulse {
       box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7);
       animation: ctaPulse 2s infinite;
@@ -169,7 +173,6 @@
       100% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0); }
     }
 
-    /* ════════ MOCKUP DE CELULAR PREMIUM (estilo tela de referência) ════════ */
     .phone {
       position: relative;
       width: 390px;
@@ -218,7 +221,6 @@
     }
     .phone-small .phone-inner { border-radius: 30px; }
 
-    /* Dynamic island */
     .phone-island {
       position: absolute;
       top: 10px;
@@ -237,7 +239,6 @@
       border-radius: 14px;
     }
 
-    /* Status bar */
     .phone-statusbar {
       display: flex;
       justify-content: space-between;
@@ -254,7 +255,6 @@
       font-size: 8px;
     }
 
-    /* Hero card da semana — mesh gradient */
     .hero-week-card {
       position: relative;
       border-radius: 28px;
@@ -279,7 +279,6 @@
       pointer-events: none;
     }
 
-    /* Baby orb — 3D com sombra interna */
     .baby-orb {
       background: radial-gradient(60% 55% at 35% 30%, #FFF8FA 0%, var(--cream2) 45%, var(--primary) 100%);
       box-shadow:
@@ -297,7 +296,6 @@
       50%      { transform: translateY(-6px) rotate(1deg); }
     }
 
-    /* Progress bar com bolha no final */
     .progress-track-premium {
       position: relative;
       height: 8px;
@@ -329,7 +327,6 @@
       box-shadow: 0 0 0 2px var(--primary-dark);
     }
 
-    /* Glass cards */
     .glass-card {
       background: rgba(255,255,255,0.85);
       backdrop-filter: blur(12px);
@@ -339,7 +336,6 @@
         0 10px 30px -12px rgba(31, 20, 32, 0.12);
     }
 
-    /* Icon button ring */
     .icon-btn {
       background: rgba(255,255,255,0.9);
       box-shadow:
@@ -347,11 +343,9 @@
         0 6px 16px -6px rgba(31, 20, 32, 0.15);
     }
 
-    /* Hide scrollbar */
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { scrollbar-width: none; }
 
-    /* Heartbeat */
     .heartbeat { animation: heartbeat 1.6s ease-in-out infinite; transform-origin: center; }
     @keyframes heartbeat {
       0%, 60%, 100% { transform: scale(1); }
@@ -359,7 +353,6 @@
       40%           { transform: scale(1.05); }
     }
 
-    /* Tab bar do app */
     .tabbar {
       background: rgba(255,255,255,0.92);
       backdrop-filter: blur(20px);
@@ -367,17 +360,14 @@
       border-top: 1px solid color-mix(in srgb, var(--primary) 50%, transparent);
     }
 
-    /* Accordion */
     details[open] summary .chev { transform: rotate(180deg); }
     .chev { transition: transform 0.3s; }
     summary::-webkit-details-marker { display: none; }
 
-    /* Progress bar */
     .progress-fill {
       background: linear-gradient(90deg, var(--primary), var(--primary-dark));
     }
 
-    /* ════════ QUIZ ════════ */
     .quiz-overlay {
       position: fixed;
       inset: 0;
@@ -456,7 +446,6 @@
     }
     .quiz-dot.active { background: var(--primary-dark); }
 
-    /* Loader */
     .loader {
       width: 48px;
       height: 48px;
@@ -469,6 +458,17 @@
     @keyframes spin { to { transform: rotate(360deg); } }
 
     [data-lucide] { stroke-width: 2; }
+
+    /* Avatar placeholder de depoimentos */
+    .avatar-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 700;
+      color: white;
+      font-size: 20px;
+    }
   </style>
 </head>
 
@@ -584,7 +584,7 @@
       <span class="hidden sm:inline opacity-60">·</span>
       <span class="flex items-center gap-1.5">
         <i data-lucide="clock" class="w-4 h-4"></i>
-        Expira en <span id="countdown" class="font-mono font-bold">23:59:47</span>
+        Expira hoy en <span id="countdown" class="font-mono font-bold">23:59:47</span>
       </span>
       <a href="#oferta" class="underline font-bold ml-2 hover:no-underline">Aprovechar</a>
     </div>
@@ -1466,6 +1466,7 @@
           <i data-lucide="star" class="w-6 h-6 fill-current"></i>
           <i data-lucide="star" class="w-6 h-6 fill-current"></i>
           <i data-lucide="star" class="w-6 h-6 fill-current"></i>
+          <span class="ml-2 text-graphite font-bold">4.9/5</span>
         </div>
         <h2 class="text-3xl md:text-4xl font-extrabold leading-tight mb-3">
           +2.000 mamás ya se organizaron con nosotras
@@ -1473,8 +1474,9 @@
         <p class="text-muted">Esto es lo que dicen:</p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white rounded-2xl p-6 shadow-sm">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition">
           <div class="flex text-yellow-400 mb-3">
             <i data-lucide="star" class="w-4 h-4 fill-current"></i>
             <i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -1489,9 +1491,7 @@
           </p>
           <div class="flex items-center gap-3">
             <div class="relative flex-shrink-0">
-              <div class="w-14 h-14 rounded-full p-0.5" style="background: linear-gradient(135deg, var(--primary), var(--secondary));">
-                <img src="data:image/jpeg;base64,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" alt="Sofia T." class="w-full h-full rounded-full object-cover bg-white" />
-              </div>
+              <div class="w-14 h-14 rounded-full avatar-placeholder" style="background: linear-gradient(135deg, #FFA6BA, #F45B7C);">S</div>
               <div class="absolute -bottom-0.5 -right-0.5 w-5 h-5 rounded-full bg-white flex items-center justify-center shadow-md">
                 <div class="w-full h-full rounded-full flex items-center justify-center" style="background: #4ade80;">
                   <i data-lucide="check" class="w-3 h-3 text-white" style="stroke-width: 3;"></i>
@@ -1499,11 +1499,157 @@
               </div>
             </div>
             <div>
-              <div class="font-bold text-sm">Sofia T.</div>
+              <div class="font-bold text-sm">Sofía T.</div>
               <div class="text-xs text-muted">29 años · Barranquilla · 35 semanas</div>
             </div>
           </div>
         </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+          <div class="flex text-yellow-400 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <p class="text-graphite leading-relaxed mb-5 italic">
+            "Me ahorré como $1.200.000 en cosas que iba a comprar sin necesidad.
+            La lista de accesorios esenciales me abrió los ojos. <strong>Mi esposo también la revisa
+            conmigo</strong>, nos sentimos mucho más tranquilos."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="relative flex-shrink-0">
+              <div class="w-14 h-14 rounded-full avatar-placeholder" style="background: linear-gradient(135deg, #A8C8E8, #4A90D4);">V</div>
+              <div class="absolute -bottom-0.5 -right-0.5 w-5 h-5 rounded-full bg-white flex items-center justify-center shadow-md">
+                <div class="w-full h-full rounded-full flex items-center justify-center" style="background: #4ade80;">
+                  <i data-lucide="check" class="w-3 h-3 text-white" style="stroke-width: 3;"></i>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="font-bold text-sm">Valentina R.</div>
+              <div class="text-xs text-muted">31 años · Medellín · 28 semanas</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+          <div class="flex text-yellow-400 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <p class="text-graphite leading-relaxed mb-5 italic">
+            "La parte de los documentos para registrar al bebé fue ORO. Llegué al notaría con
+            todo listo y <strong>me registraron al niño en 20 minutos</strong>.
+            Mi cuñada tardó 3 días. Valió cada peso."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="relative flex-shrink-0">
+              <div class="w-14 h-14 rounded-full avatar-placeholder" style="background: linear-gradient(135deg, #F9D5E0, #E87AA0);">C</div>
+              <div class="absolute -bottom-0.5 -right-0.5 w-5 h-5 rounded-full bg-white flex items-center justify-center shadow-md">
+                <div class="w-full h-full rounded-full flex items-center justify-center" style="background: #4ade80;">
+                  <i data-lucide="check" class="w-3 h-3 text-white" style="stroke-width: 3;"></i>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="font-bold text-sm">Camila M.</div>
+              <div class="text-xs text-muted">27 años · Bogotá · Mamá de Mateo (3 meses)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+          <div class="flex text-yellow-400 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <p class="text-graphite leading-relaxed mb-5 italic">
+            "Es mi primer bebé y yo vivía angustiada con cada cita médica, pensando que se me
+            olvidaba algo. Ahora abro la app y veo todo en orden. <strong>Dormí tranquila por
+            primera vez en meses.</strong>"
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="relative flex-shrink-0">
+              <div class="w-14 h-14 rounded-full avatar-placeholder" style="background: linear-gradient(135deg, #FFE4EA, #D9376A);">L</div>
+              <div class="absolute -bottom-0.5 -right-0.5 w-5 h-5 rounded-full bg-white flex items-center justify-center shadow-md">
+                <div class="w-full h-full rounded-full flex items-center justify-center" style="background: #4ade80;">
+                  <i data-lucide="check" class="w-3 h-3 text-white" style="stroke-width: 3;"></i>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="font-bold text-sm">Laura P.</div>
+              <div class="text-xs text-muted">24 años · Cali · 22 semanas</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+          <div class="flex text-yellow-400 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <p class="text-graphite leading-relaxed mb-5 italic">
+            "Lo mejor es el bono de ChatGPT con IA. Respondí 6 preguntas y me armó el ajuar
+            perfecto para mi niña. <strong>Nada de lo que no va a usar.</strong>
+            Mi mamá no podía creer que no compré 5 millones de cosas."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="relative flex-shrink-0">
+              <div class="w-14 h-14 rounded-full avatar-placeholder" style="background: linear-gradient(135deg, #C5DCEF, #2E6FB0);">D</div>
+              <div class="absolute -bottom-0.5 -right-0.5 w-5 h-5 rounded-full bg-white flex items-center justify-center shadow-md">
+                <div class="w-full h-full rounded-full flex items-center justify-center" style="background: #4ade80;">
+                  <i data-lucide="check" class="w-3 h-3 text-white" style="stroke-width: 3;"></i>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="font-bold text-sm">Daniela F.</div>
+              <div class="text-xs text-muted">33 años · Cartagena · 32 semanas</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+          <div class="flex text-yellow-400 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <p class="text-graphite leading-relaxed mb-5 italic">
+            "Ya tuve 2 hijos y pensé que no necesitaba ayuda… pero con el tercero me organicé
+            como nunca. La lista de la pañalera separada por mamá, bebé y acompañante es
+            <strong>una joya</strong>. Recomendadísima."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="relative flex-shrink-0">
+              <div class="w-14 h-14 rounded-full avatar-placeholder" style="background: linear-gradient(135deg, #FFB7C9, #C87C96);">A</div>
+              <div class="absolute -bottom-0.5 -right-0.5 w-5 h-5 rounded-full bg-white flex items-center justify-center shadow-md">
+                <div class="w-full h-full rounded-full flex items-center justify-center" style="background: #4ade80;">
+                  <i data-lucide="check" class="w-3 h-3 text-white" style="stroke-width: 3;"></i>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="font-bold text-sm">Andrea G.</div>
+              <div class="text-xs text-muted">36 años · Bucaramanga · 38 semanas</div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1528,7 +1674,7 @@
           <div class="flex-1">
             <div class="flex items-start justify-between flex-wrap gap-2 mb-2">
               <h3 class="text-lg md:text-xl font-bold">BONO #1 · Lista de Links Directos</h3>
-              <span class="text-sm line-through text-muted">$45.000</span>
+              <span class="text-sm line-through text-muted">$14.900</span>
             </div>
             <p class="text-sm text-muted leading-relaxed">
               PDF exclusivo con los mejores productos del ajuar ya seleccionados, con links directos
@@ -1543,7 +1689,7 @@
           <div class="flex-1">
             <div class="flex items-start justify-between flex-wrap gap-2 mb-2">
               <h3 class="text-lg md:text-xl font-bold">BONO #2 · Ajuar Personalizado con IA</h3>
-              <span class="text-sm line-through text-muted">$35.000</span>
+              <span class="text-sm line-through text-muted">$11.900</span>
             </div>
             <p class="text-sm text-muted leading-relaxed" id="bono2-desc">
               Comando listo para copiar y pegar en ChatGPT. Responde 6 preguntas y la IA arma
@@ -1558,7 +1704,7 @@
           <div class="flex-1">
             <div class="flex items-start justify-between flex-wrap gap-2 mb-2">
               <h3 class="text-lg md:text-xl font-bold">BONO #3 · Guía Express de Documentos</h3>
-              <span class="text-sm line-through text-muted">$25.000</span>
+              <span class="text-sm line-through text-muted">$8.900</span>
             </div>
             <p class="text-sm text-muted leading-relaxed" id="bono3-desc">
               Todo lo que necesitas para registrar tu bebé en Colombia: registro civil, afiliación a EPS,
@@ -1580,7 +1726,7 @@
       <div class="bg-urgent text-white text-center py-3 px-4 rounded-2xl mb-8 shadow-lg">
         <p class="text-sm md:text-base font-bold flex items-center justify-center gap-2">
           <i data-lucide="clock" class="w-4 h-4"></i>
-          OFERTA EXPIRA EN: <span id="countdown2" class="font-mono">23:59:47</span>
+          OFERTA EXPIRA HOY EN: <span id="countdown2" class="font-mono">23:59:47</span>
         </p>
       </div>
 
@@ -1608,22 +1754,22 @@
           <div class="border-t border-dashed border-muted/30 pt-6 mb-6">
             <div class="flex justify-between text-sm text-muted mb-2">
               <span>Valor total del paquete:</span>
-              <span class="font-semibold">$277.850 COP</span>
+              <span class="font-semibold">$89.700 COP</span>
             </div>
             <div class="flex justify-between text-sm text-muted mb-2">
               <span>Precio regular:</span>
-              <span class="line-through">$67.900 COP</span>
+              <span class="line-through">$19.900 COP</span>
             </div>
             <div class="flex justify-between items-baseline pt-3 border-t border-muted/20">
               <span class="text-lg font-bold">HOY pagas solo:</span>
               <div class="text-right">
-                <div class="text-4xl md:text-5xl font-extrabold text-urgent">$27.850</div>
-                <div class="text-xs text-muted">COP · o 3 cuotas sin interés</div>
+                <div class="text-4xl md:text-5xl font-extrabold text-urgent">$ 8.816</div>
+                <div class="text-xs text-muted">COP · o 6 cuotas de $ 1.469 en tarjeta de crédito</div>
               </div>
             </div>
           </div>
 
-          <a href="#" onclick="alert('Conectar con checkout real')" class="cta-pulse block w-full text-center bg-urgent hover:opacity-90 text-white font-extrabold py-5 px-6 rounded-2xl shadow-xl transform hover:scale-[1.02] transition mb-4" style="font-size: clamp(15px, 3.5vw, 20px); line-height: 1.3;">
+          <a href="https://pay.hotmart.com/O105482548M" target="_blank" rel="noopener" onclick="trackPurchase()" class="cta-pulse block w-full text-center bg-urgent hover:opacity-90 text-white font-extrabold py-5 px-6 rounded-2xl shadow-xl transform hover:scale-[1.02] transition mb-4" style="font-size: clamp(15px, 3.5vw, 20px); line-height: 1.3;">
             <span id="cta-oferta" class="inline-block">SÍ, QUIERO ORGANIZARME YA</span>
             <span class="inline-block ml-2 align-middle" style="transform: translateY(-1px);">→</span>
           </a>
@@ -1691,7 +1837,7 @@
             <i data-lucide="chevron-down" class="chev w-5 h-5 text-primary-dark"></i>
           </summary>
           <div class="px-5 pb-5 text-muted text-sm leading-relaxed">
-            Es un pago <strong>único</strong>. Pagas $27.850 una sola vez y tienes acceso de por vida.
+            Es un pago <strong>único</strong>. Pagas $ 8.816 una sola vez (o en 6 cuotas de $ 1.469) y tienes acceso de por vida.
           </div>
         </details>
         <details class="bg-white rounded-2xl shadow-sm overflow-hidden">
@@ -1701,7 +1847,7 @@
           </summary>
           <div class="px-5 pb-5 text-muted text-sm leading-relaxed">
             Aceptamos <strong>Nequi, PSE, Bancolombia</strong>, tarjeta de crédito y débito.
-            También puedes pagar en hasta <strong>3 cuotas sin interés</strong>.
+            También puedes pagar en hasta <strong>6 cuotas sin interés</strong>.
           </div>
         </details>
         <details class="bg-white rounded-2xl shadow-sm overflow-hidden">
@@ -1757,11 +1903,11 @@
 
       <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 mb-8">
         <p class="text-sm text-white/70 mb-1">La diferencia son</p>
-        <p class="text-4xl md:text-5xl font-extrabold text-primary mb-1">$27.850 COP</p>
-        <p class="text-xs text-white/60">El impacto en tu embarazo, no tiene precio.</p>
+        <p class="text-4xl md:text-5xl font-extrabold text-primary mb-1">$ 8.816 COP</p>
+        <p class="text-xs text-white/60">o 6 cuotas de $ 1.469 · El impacto en tu embarazo, no tiene precio.</p>
       </div>
 
-      <a href="#oferta" class="cta-pulse inline-flex items-center gap-2 bg-urgent hover:opacity-90 text-white font-extrabold text-lg md:text-xl px-10 py-5 rounded-full shadow-2xl transform hover:scale-105 transition">
+      <a href="https://pay.hotmart.com/O105482548M" target="_blank" rel="noopener" onclick="trackPurchase()" class="cta-pulse inline-flex items-center gap-2 bg-urgent hover:opacity-90 text-white font-extrabold text-lg md:text-xl px-10 py-5 rounded-full shadow-2xl transform hover:scale-105 transition">
         QUIERO MI GUÍA AHORA
         <i data-lucide="arrow-right" class="w-6 h-6"></i>
       </a>
@@ -1789,15 +1935,17 @@
 
   <a href="#oferta" class="hidden md:flex fixed bottom-6 right-6 z-40 bg-urgent hover:opacity-90 text-white font-bold px-5 py-3 rounded-full shadow-2xl items-center gap-2 transform hover:scale-105 transition">
     <i data-lucide="gift" class="w-4 h-4"></i>
-    $27.850 · Quiero ya
+    $ 8.816 · Quiero ya
   </a>
 
-  </div><script>
+  </div>
+
+  <script>
     // Estado
     let babyGender = 'unknown';
     let babyName = '';
+    let quizStartTime = Date.now();
 
-    // Init Lucide no primeiro carregamento
     lucide.createIcons();
 
     // ═══ QUIZ LOGIC ═══
@@ -1813,10 +1961,8 @@
 
     function selectGender(gender) {
       babyGender = gender;
-      // Aplica tema já na tela 2 pra dar preview
       applyTheme(gender);
 
-      // Ajusta copy da pergunta do nome conforme sexo
       const t2 = document.getElementById('step2-title');
       const s2 = document.getElementById('step2-subtitle');
       const input = document.getElementById('baby-name-input');
@@ -1852,14 +1998,63 @@
       goToLanding();
     }
 
+    // ═══ WEBHOOK — envia dados do quiz ═══
+    async function sendToWebhook() {
+      const payload = {
+        event: 'quiz_completed',
+        timestamp: new Date().toISOString(),
+        baby_gender: babyGender,
+        baby_gender_label: babyGender === 'girl' ? 'niña' : babyGender === 'boy' ? 'niño' : 'no sabe',
+        baby_name: babyName || null,
+        has_name: babyName.length > 0,
+        quiz_duration_seconds: Math.round((Date.now() - quizStartTime) / 1000),
+        page_url: window.location.href,
+        referrer: document.referrer || null,
+        user_agent: navigator.userAgent,
+        language: navigator.language || null,
+        screen: {
+          width: window.screen.width,
+          height: window.screen.height
+        }
+      };
+
+      // Só envia se o webhook URL foi configurado
+      if (CONFIG.WEBHOOK_URL && !CONFIG.WEBHOOK_URL.includes('SEU-WEBHOOK-AQUI')) {
+        try {
+          // fetch em modo no-cors pra não travar caso CORS não esteja aberto;
+          // se o seu webhook tiver CORS ok, pode trocar pra 'cors' e ler a resposta.
+          await fetch(CONFIG.WEBHOOK_URL, {
+            method: 'POST',
+            mode: 'cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+            keepalive: true
+          }).catch(err => {
+            // Fallback silencioso — não trava o fluxo do usuário
+            console.warn('Webhook falhou:', err);
+          });
+        } catch (e) {
+          console.warn('Webhook falhou:', e);
+        }
+      } else {
+        console.log('[WEBHOOK DESABILITADO] Payload que seria enviado:', payload);
+      }
+    }
+
     function goToLanding() {
-      // Disparando o evento de Lead do Meta Pixel
+      // Dispara Lead do Meta Pixel
       if (typeof fbq === 'function') {
-        fbq('track', 'Lead');
+        fbq('track', 'Lead', {
+          content_name: 'Quiz Completed',
+          baby_gender: babyGender,
+          has_name: babyName.length > 0
+        });
       }
 
+      // Envia pro webhook (fire-and-forget)
+      sendToWebhook();
+
       showStep(3);
-      // Ajusta título do loader
       const t3 = document.getElementById('step3-title');
       const s3 = document.getElementById('step3-subtitle');
       if (babyName) {
@@ -1876,9 +2071,21 @@
         personalizeLanding();
         lucide.createIcons();
         startCountdown();
-        // Scroll pro topo
         window.scrollTo(0, 0);
       }, 1800);
+    }
+
+    // ═══ Tracking de compra ═══
+    function trackPurchase() {
+      if (typeof fbq === 'function') {
+        fbq('track', 'InitiateCheckout', {
+          content_name: 'Guía del Embarazo Organizado',
+          currency: 'COP',
+          value: 8816
+        });
+      }
+      // Deixa o link abrir normalmente
+      return true;
     }
 
     // ═══ APLICAR TEMA ═══
@@ -1888,21 +2095,16 @@
       else if (gender === 'boy') document.body.classList.add('theme-boy');
     }
 
-    // ═══ PERSONALIZAR LANDING COM NOME E SEXO ═══
+    // ═══ PERSONALIZAR LANDING ═══
     function personalizeLanding() {
       const N = babyName;
       const hasName = N.length > 0;
 
-      // === MOCKUPS (dentro do celular) ===
-      // Se a mãe deu o nome dela, usar ele no mockup tb fica muito estranho — então mantemos "Marta" como exemplo genérico
-      // Mas ajustamos detalhes do tema azul para meninos
       if (babyGender === 'boy') {
-        // Troca emoji de fruta pela versão neutra
         const sizeEl = document.getElementById('mockup-hero-size');
         if (sizeEl) sizeEl.textContent = 'una ciruela';
       }
 
-      // === HERO ===
       const heroGreeting = document.getElementById('hero-greeting');
       const heroBabyFor = document.getElementById('hero-baby-for');
       const heroSub = document.getElementById('hero-sub');
@@ -1919,31 +2121,26 @@
         heroSub.innerHTML = `La app que reúne <strong class="text-graphite">todo lo que necesitas organizar</strong> para la llegada de tu príncipe — en un solo lugar, semana a semana, sin estrés ni gastos innecesarios.`;
       }
 
-      // === DOR 1 ===
       if (hasName) {
         document.getElementById('pain1-p1').innerHTML =
           `Desde que viste esas dos rayitas y supiste que ${N} venía en camino, tu mente no para. Citas médicas, ecografías, ropita, la pañalera, documentos, el cuarto, el ajuar, exámenes del tercer trimestre…`;
       }
 
-      // === DOR 2 ===
       if (hasName) {
         document.getElementById('pain2-p1').innerHTML =
           `Compras un vestidito porque "estaba en oferta". Tres pares de zapaticos que ${N} <strong>ni siquiera va a usar</strong> en los primeros meses. Una cuna carísima que después descubres que ni necesitabas.`;
       }
 
-      // === DOR 3 ===
       if (hasName) {
         document.getElementById('pain3-item2').innerHTML =
           `Saber que la canastilla de ${N} está <strong>100% lista</strong> y revisada.`;
       }
 
-      // === SOLUCIÓN ===
       if (hasName) {
         document.getElementById('solucao-sub').innerHTML =
           `Una aplicación <strong>hecha por mamás, para mamás</strong> que reúne en un solo lugar todo lo que necesitas para recibir a ${N} con tranquilidad y sin olvidos.`;
       }
 
-      // === MÓDULOS ===
       if (hasName) {
         document.getElementById('modulos-title').innerHTML =
           `Todo lo que necesitas para recibir a <span class="text-primary-dark">${N}</span>`;
@@ -1953,7 +2150,6 @@
           `Baño, higiene, alimentación, paseo, sueño. Cada ítem marcado como esencial, recomendado u opcional — para que compres SOLO lo que ${N} va a usar.`;
       }
 
-      // === BÔNUS ===
       if (hasName) {
         document.getElementById('bono2-desc').innerHTML =
           `Comando listo para copiar y pegar en ChatGPT. Responde 6 preguntas y la IA arma el ajuar personalizado para ${N} — <strong>hecho a su medida</strong>, sin excesos.`;
@@ -1961,11 +2157,9 @@
           `Todo lo que necesitas para registrar a ${N} en Colombia: registro civil, afiliación a EPS, licencia de maternidad. Pasos claros y <strong>qué decir en cada lugar</strong>.`;
       }
 
-      // === OFERTA ===
       if (hasName) {
         document.getElementById('oferta-title').innerHTML =
           `Todo lo que ${N} necesita,<br>en un solo pago único`;
-        // CTA adapta o texto conforme o tamanho do nome
         const ctaEl = document.getElementById('cta-oferta');
         if (N.length <= 6) {
           ctaEl.textContent = `SÍ, QUIERO PREPARARME PARA ${N.toUpperCase()}`;
@@ -1976,31 +2170,27 @@
         }
       }
 
-      // === CTA FINAL ===
       if (hasName) {
         document.getElementById('cta-final-title').innerHTML =
           `La llegada de <em>${N}</em> no se repite.<br><span class="text-primary">Tu tranquilidad tampoco.</span>`;
         document.getElementById('cta-final-text').innerHTML =
           `Puedes seguir guardando capturas en el celular y viviendo con la sensación de que algo se te está olvidando.<br><br>O puedes tomar la decisión <strong class="text-primary">hoy</strong> y prepararte para recibir a ${N} con la tranquilidad que te mereces.`;
       }
-
-      // === VSL ===
-      if (hasName) {
-        const vslTitle = document.getElementById('vsl-title');
-        if(vslTitle) {
-          vslTitle.innerHTML = `Mira cómo +2.000 mamás se prepararon sin estrés<br class="hidden md:block"><span class="text-primary">para la llegada de sus bebés</span>`;
-        }
-      }
-
-      // === MOCKUP (ajusta referência de tamanho se tiver nome) ===
-      // (mantém "del tamaño de una ciruela" — referência universal)
     }
 
-    // ═══ COUNTDOWN ═══
+    // ═══ COUNTDOWN — reseta toda meia-noite do mesmo dia ═══
     function startCountdown() {
-      const end = Date.now() + (24 * 60 * 60 * 1000) - 13 * 1000;
       const tick = () => {
-        const diff = end - Date.now();
+        const now = new Date();
+        // Meia-noite do próximo dia (00:00 do dia seguinte no fuso local do usuário)
+        const endOfDay = new Date(
+          now.getFullYear(),
+          now.getMonth(),
+          now.getDate() + 1,
+          0, 0, 0, 0
+        );
+        const diff = endOfDay.getTime() - now.getTime();
+
         if (diff <= 0) {
           document.querySelectorAll('#countdown, #countdown2').forEach(el => el.textContent = '00:00:00');
           return;
@@ -2014,7 +2204,6 @@
       setInterval(tick, 1000);
     }
 
-    // Enter no input de nome
     document.getElementById('baby-name-input').addEventListener('keypress', (e) => {
       if (e.key === 'Enter') submitName();
     });
