@@ -29,16 +29,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <script>
-    // ═══════════════════════════════════════════════
-    // ⚙️  CONFIGURAÇÃO — EDITE AQUI
-    // ═══════════════════════════════════════════════
     const CONFIG = {
-      // Link de checkout da Hotmart
       CHECKOUT_URL: 'https://pay.hotmart.com/O105482548M',
-      // URL do webhook — cole aqui quando tiver
       WEBHOOK_URL: 'https://hook.us2.make.com/b11q45ri35fiortnt76pmihffo43vzi0'
     };
-    // ═══════════════════════════════════════════════
 
     tailwind.config = {
       theme: {
@@ -100,6 +94,8 @@
       --gradient-to:   #FF94AE;
       --gradient-radial-1: #FFC8D5;
       --gradient-radial-2: #FFE4EA;
+      --whatsapp:      #25D366;
+      --whatsapp-dark: #128C7E;
     }
 
     body.theme-girl {
@@ -459,7 +455,6 @@
 
     [data-lucide] { stroke-width: 2; }
 
-    /* Avatar placeholder de depoimentos */
     .avatar-placeholder {
       display: flex;
       align-items: center;
@@ -468,6 +463,32 @@
       font-weight: 700;
       color: white;
       font-size: 20px;
+    }
+
+    /* === SEÇÃO CONTATO WHATSAPP === */
+    .wa-card {
+      background: linear-gradient(135deg, #ffffff 0%, #F5FFF7 100%);
+      border: 2px solid color-mix(in srgb, var(--whatsapp) 25%, transparent);
+    }
+    .wa-icon-bubble {
+      background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-dark) 100%);
+      box-shadow: 0 12px 28px -8px color-mix(in srgb, var(--whatsapp) 55%, transparent);
+    }
+    .wa-btn {
+      background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-dark) 100%);
+      box-shadow: 0 10px 24px -6px color-mix(in srgb, var(--whatsapp) 55%, transparent);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .wa-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 14px 32px -6px color-mix(in srgb, var(--whatsapp) 65%, transparent);
+    }
+    .wa-pulse {
+      animation: waPulse 2.5s ease-in-out infinite;
+    }
+    @keyframes waPulse {
+      0%, 100% { box-shadow: 0 10px 24px -6px color-mix(in srgb, var(--whatsapp) 55%, transparent), 0 0 0 0 color-mix(in srgb, var(--whatsapp) 50%, transparent); }
+      50%      { box-shadow: 0 10px 24px -6px color-mix(in srgb, var(--whatsapp) 55%, transparent), 0 0 0 14px color-mix(in srgb, var(--whatsapp) 0%, transparent); }
     }
   </style>
 </head>
@@ -1920,6 +1941,45 @@
     </div>
   </section>
 
+  <!-- ═══ SEÇÃO CONTATO WHATSAPP ═══ -->
+  <section id="contacto" class="py-16 md:py-20 bg-cream">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="wa-card rounded-3xl shadow-lg p-8 md:p-12 text-center">
+        <div class="wa-icon-bubble w-20 h-20 mx-auto mb-5 rounded-full flex items-center justify-center">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-extrabold mb-3">
+          ¿Tienes alguna <span style="color: var(--whatsapp-dark);">duda</span>?
+        </h2>
+        <p class="text-base md:text-lg text-muted leading-relaxed mb-7 max-w-xl mx-auto">
+          Escríbenos directamente por WhatsApp y te responderemos lo antes posible.
+          Estamos aquí para ayudarte en lo que necesites 💬
+        </p>
+
+        <a
+          href="https://wa.me/5585999693772?text=Hola!%20Tengo%20una%20duda%20sobre%20la%20Gu%C3%ADa%20del%20Embarazo%20Organizado"
+          target="_blank"
+          rel="noopener"
+          class="wa-btn wa-pulse inline-flex items-center gap-3 text-white font-bold text-base md:text-lg px-8 py-4 rounded-full"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Hablar por WhatsApp
+        </a>
+
+        <p class="flex items-center justify-center gap-2 text-xs text-muted mt-4">
+          <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+          Respuesta rápida · Lun a Sáb de 8am a 8pm
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- ═══ FIM SEÇÃO CONTATO WHATSAPP ═══ -->
+
   <footer class="bg-cream py-8 border-t border-muted/20">
     <div class="max-w-5xl mx-auto px-5 text-center text-xs text-muted">
       <p class="mb-2">© 2026 Guía del Embarazo Organizado. Todos los derechos reservados.</p>
@@ -1941,14 +2001,12 @@
   </div>
 
   <script>
-    // Estado
     let babyGender = 'unknown';
     let babyName = '';
     let quizStartTime = Date.now();
 
     lucide.createIcons();
 
-    // ═══ QUIZ LOGIC ═══
     function showStep(n) {
       document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
       document.getElementById('step-' + n).classList.add('active');
@@ -1998,7 +2056,6 @@
       goToLanding();
     }
 
-    // ═══ WEBHOOK — envia dados do quiz ═══
     async function sendToWebhook() {
       const payload = {
         event: 'quiz_completed',
@@ -2018,11 +2075,8 @@
         }
       };
 
-      // Só envia se o webhook URL foi configurado
       if (CONFIG.WEBHOOK_URL && !CONFIG.WEBHOOK_URL.includes('SEU-WEBHOOK-AQUI')) {
         try {
-          // fetch em modo no-cors pra não travar caso CORS não esteja aberto;
-          // se o seu webhook tiver CORS ok, pode trocar pra 'cors' e ler a resposta.
           await fetch(CONFIG.WEBHOOK_URL, {
             method: 'POST',
             mode: 'cors',
@@ -2030,7 +2084,6 @@
             body: JSON.stringify(payload),
             keepalive: true
           }).catch(err => {
-            // Fallback silencioso — não trava o fluxo do usuário
             console.warn('Webhook falhou:', err);
           });
         } catch (e) {
@@ -2042,7 +2095,6 @@
     }
 
     function goToLanding() {
-      // Dispara Lead do Meta Pixel
       if (typeof fbq === 'function') {
         fbq('track', 'Lead', {
           content_name: 'Quiz Completed',
@@ -2051,7 +2103,6 @@
         });
       }
 
-      // Envia pro webhook (fire-and-forget)
       sendToWebhook();
 
       showStep(3);
@@ -2075,7 +2126,6 @@
       }, 1800);
     }
 
-    // ═══ Tracking de compra ═══
     function trackPurchase() {
       if (typeof fbq === 'function') {
         fbq('track', 'InitiateCheckout', {
@@ -2084,18 +2134,15 @@
           value: 8816
         });
       }
-      // Deixa o link abrir normalmente
       return true;
     }
 
-    // ═══ APLICAR TEMA ═══
     function applyTheme(gender) {
       document.body.classList.remove('theme-girl', 'theme-boy');
       if (gender === 'girl') document.body.classList.add('theme-girl');
       else if (gender === 'boy') document.body.classList.add('theme-boy');
     }
 
-    // ═══ PERSONALIZAR LANDING ═══
     function personalizeLanding() {
       const N = babyName;
       const hasName = N.length > 0;
@@ -2178,11 +2225,9 @@
       }
     }
 
-    // ═══ COUNTDOWN — reseta toda meia-noite do mesmo dia ═══
     function startCountdown() {
       const tick = () => {
         const now = new Date();
-        // Meia-noite do próximo dia (00:00 do dia seguinte no fuso local do usuário)
         const endOfDay = new Date(
           now.getFullYear(),
           now.getMonth(),
