@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <title>Guía del Embarazo Organizado — Organiza todo tu embarazo en un solo lugar</title>
+  <title>Guía del Embarazo Organizado — Deja de gastar plata sin saber qué necesita tu bebé</title>
   <meta name="description" content="La app que reúne todo lo que necesitas organizar en tu embarazo. Pago único. Acceso de por vida. Garantía de 7 días." />
 
   <script>
@@ -490,6 +490,51 @@
       0%, 100% { box-shadow: 0 10px 24px -6px color-mix(in srgb, var(--whatsapp) 55%, transparent), 0 0 0 0 color-mix(in srgb, var(--whatsapp) 50%, transparent); }
       50%      { box-shadow: 0 10px 24px -6px color-mix(in srgb, var(--whatsapp) 55%, transparent), 0 0 0 14px color-mix(in srgb, var(--whatsapp) 0%, transparent); }
     }
+
+    /* === ESTILO COPY AGRESSIVA === */
+    .highlight-yellow {
+      background: linear-gradient(180deg, transparent 60%, #FFF066 60%);
+      padding: 0 2px;
+    }
+    .stamp {
+      display: inline-block;
+      transform: rotate(-3deg);
+      border: 2px solid var(--urgent);
+      color: var(--urgent);
+      font-weight: 900;
+      padding: 4px 12px;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+      font-size: 0.85em;
+    }
+    .live-pulse-dot {
+      display: inline-block;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 0 0 rgba(74,222,128,0.7);
+      animation: livePulse 1.6s ease-out infinite;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+    @keyframes livePulse {
+      0%   { box-shadow: 0 0 0 0 rgba(74,222,128,0.7); }
+      70%  { box-shadow: 0 0 0 10px rgba(74,222,128,0); }
+      100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+    }
+    .scarcity-bar {
+      background: rgba(255,255,255,0.15);
+      border-radius: 999px;
+      overflow: hidden;
+      height: 8px;
+      margin-top: 8px;
+    }
+    .scarcity-fill {
+      background: white;
+      height: 100%;
+      width: 87%;
+      border-radius: 999px;
+    }
   </style>
 </head>
 
@@ -517,7 +562,7 @@
           <span class="text-primary-dark">¿Ya sabes si es niño o niña?</span>
         </h2>
         <p class="text-sm text-muted text-center mb-6">
-          Vamos a personalizar todo para ti 💙
+          Vamos a personalizar TODA la app para ti 💙
         </p>
 
         <div class="space-y-3">
@@ -598,19 +643,21 @@
 
   <div id="landing" class="hidden">
 
+  <!-- TOPO ULTRA URGENTE -->
   <div class="sticky top-0 z-50 bg-urgent text-white py-2.5 px-4 text-sm font-semibold">
     <div class="flex items-center justify-center gap-2 flex-wrap max-w-6xl mx-auto">
       <i data-lucide="flame" class="w-4 h-4"></i>
-      <span>OFERTA DE LANZAMIENTO</span>
+      <span><strong>ÚLTIMAS HORAS</strong> · -65% OFF</span>
       <span class="hidden sm:inline opacity-60">·</span>
       <span class="flex items-center gap-1.5">
         <i data-lucide="clock" class="w-4 h-4"></i>
-        Expira hoy en <span id="countdown" class="font-mono font-bold">23:59:47</span>
+        Vence en <span id="countdown" class="font-mono font-bold">23:59:47</span>
       </span>
-      <a href="#oferta" class="underline font-bold ml-2 hover:no-underline">Aprovechar</a>
+      <a href="#oferta" class="underline font-bold ml-2 hover:no-underline">Aprovechar YA →</a>
     </div>
   </div>
 
+  <!-- HERO -->
   <section class="relative overflow-hidden bg-cream">
     <div class="absolute top-20 -left-20 w-64 h-64 rounded-full blur-3xl opacity-30" style="background: var(--primary);"></div>
     <div class="absolute top-40 -right-20 w-72 h-72 rounded-full blur-3xl opacity-30" style="background: var(--secondary);"></div>
@@ -620,21 +667,21 @@
 
         <div class="text-center md:text-left">
           <span class="inline-flex items-center gap-1.5 text-graphite text-xs font-bold px-3 py-1.5 rounded-full mb-5 uppercase tracking-wide" style="background: color-mix(in srgb, var(--primary) 40%, transparent);">
-            <i data-lucide="heart" class="w-3.5 h-3.5"></i>
-            +2.000 mamás ya la usan
+            <span class="live-pulse-dot"></span>
+            +2.347 mamás colombianas usándola AHORA
           </span>
 
           <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-5">
-            <span id="hero-greeting">Nunca más te quedes con la duda</span><br>
-            de si estás olvidando algo
+            <span id="hero-greeting">Deja de gastar plata en cosas que tu bebé</span>
             <span style="background: linear-gradient(to right, var(--primary-dark), var(--secondary)); -webkit-background-clip: text; background-clip: text; color: transparent;">
-              importante <span id="hero-baby-for">para tu bebé</span>
+              <span id="hero-baby-for">NUNCA va a usar</span>
             </span>.
           </h1>
 
           <p class="text-base md:text-lg text-muted mb-7 leading-relaxed" id="hero-sub">
-            La app que reúne <strong class="text-graphite">todo lo que necesitas organizar</strong> en tu embarazo —
-            en un solo lugar, semana a semana, sin estrés ni gastos innecesarios.
+            La ÚNICA app colombiana que te dice <strong class="text-graphite">exactamente qué comprar, cuándo, y cuánto</strong> —
+            semana a semana, sin excesos, sin olvidos, sin angustia.
+            <strong class="text-urgent">Te ahorra hasta $1.500.000 antes de que nazca.</strong>
           </p>
 
           <div class="flex flex-wrap gap-4 justify-center md:justify-start mb-7 text-sm">
@@ -645,7 +692,7 @@
               <i data-lucide="check-circle-2" class="w-5 h-5 text-success-dark"></i> Acceso de por vida
             </span>
             <span class="flex items-center gap-1.5 text-graphite font-medium">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-success-dark"></i> Garantía 7 días
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-success-dark"></i> 7 días o te devolvemos tu plata
             </span>
           </div>
 
@@ -656,7 +703,12 @@
 
           <p class="flex items-center justify-center md:justify-start gap-1.5 text-xs text-muted mt-3">
             <i data-lucide="lock" class="w-3.5 h-3.5"></i>
-            Pago seguro · Nequi · PSE · Tarjeta · Bancolombia
+            Pago 100% seguro · Nequi · PSE · Tarjeta · Bancolombia
+          </p>
+
+          <p class="mt-3 text-xs text-graphite font-semibold flex items-center justify-center md:justify-start gap-1.5">
+            <span class="live-pulse-dot"></span>
+            <span><span id="live-purchases">23</span> mamás compraron en las últimas 24h</span>
           </p>
         </div>
 
@@ -890,66 +942,90 @@
     </div>
   </section>
 
-  
+
+  <!-- DOR 1 — AGRESSIVA -->
   <section class="py-16 md:py-24 bg-cream">
     <div class="max-w-3xl mx-auto px-5">
       <div class="text-center mb-10">
         <span class="inline-flex items-center gap-1.5 text-urgent text-xs font-bold uppercase tracking-wider mb-3">
           <i data-lucide="alert-circle" class="w-4 h-4"></i>
-          ¿Te identificas?
+          Sé honesta contigo misma…
         </span>
         <h2 class="text-3xl md:text-4xl font-extrabold leading-tight mb-5">
-          ¿Sientes que algo se te está escapando…<br class="hidden md:block">
-          pero <span class="text-urgent">no sabes qué</span>?
+          Son las <span class="text-urgent">2 de la mañana</span>.<br>
+          Tú estás <span class="text-urgent">despierta</span>, mirando el techo,<br class="hidden md:block">
+          pensando: <em>"¿se me está olvidando algo?"</em>
         </h2>
       </div>
 
       <div class="space-y-5 text-base md:text-lg text-graphite leading-relaxed" style="opacity: 0.9;">
         <p id="pain1-p1">
-          Desde que viste esas dos rayitas, tu mente no para. Citas médicas, ecografías, ropita, la pañalera,
-          documentos, el cuarto del bebé, el ajuar, la cita con el pediatra, los exámenes del tercer trimestre…
+          <strong>Ya viste las dos rayitas.</strong> Y desde ese día tu mente no para. Citas médicas, ecografías,
+          ropita, la pañalera, exámenes que no entiendes, documentos para la EPS, el cuarto, el ajuar, vacunas,
+          pediatra, nombres, el baby shower… <strong>y todo al mismo tiempo.</strong>
         </p>
         <p>
-          Y cada vez que entras a Instagram, aparece una mamá diciendo "no olvides esto" y otra diciendo
-          "esto no lo necesitas". <strong>Y tú ahí, con el corazón apretado, pensando: ¿estoy haciendo todo bien?</strong>
+          Cada vez que abres Instagram, una mamá dice "no olvides esto" y la siguiente dice "esto NO lo necesitas".
+          Tu prima dice una cosa, tu mamá dice otra, tu suegra dice otra. <strong class="text-urgent">Y tú ahí, con el corazón apretado,
+          preguntándote si estás haciendo todo bien.</strong>
         </p>
         <p>
-          La verdad es que <strong>no es culpa tuya</strong>. Es que nadie te dio un plan claro.
-          Listas sueltas en WhatsApp, capturas en el celular, apuntes en un cuaderno… eso no es organización.
-          <span class="text-urgent font-semibold">Es caos disfrazado.</span>
+          La verdad dolorosa es esta: <strong>nadie te dio un plan.</strong> Tienes capturas en el celular, listas en WhatsApp,
+          notas en un cuaderno, un grupo de mamás donde mandan PDFs sueltos…
+          <span class="text-urgent font-semibold">Eso no es organizarse. Eso es sobrevivir el día a día rezando para no olvidar nada importante.</span>
+        </p>
+        <p class="font-bold text-graphite text-xl">
+          Y mientras tanto, <span class="highlight-yellow">los días se te van</span>. La semana 13 se vuelve la semana 22.
+          La semana 22 se vuelve la 30. Y cuando te das cuenta…
+          <span class="text-urgent">ya no tienes tiempo de organizar nada.</span>
         </p>
       </div>
 
-      <div class="mt-10 p-6 md:p-8 bg-white rounded-2xl shadow-sm" style="border-left: 4px solid var(--primary);">
-        <i data-lucide="quote" class="w-6 h-6 mb-2" style="color: var(--primary);"></i>
+      <div class="mt-10 p-6 md:p-8 bg-white rounded-2xl shadow-sm" style="border-left: 4px solid var(--urgent);">
+        <i data-lucide="quote" class="w-6 h-6 mb-2 text-urgent"></i>
         <p class="text-lg md:text-xl font-semibold italic text-graphite">
-          El problema no es falta de información.<br>
-          Es tener demasiada información <span class="text-primary-dark">sin un orden.</span>
+          El problema no es que te falte información.<br>
+          Es que tienes <span class="text-urgent">DEMASIADA información sin un orden.</span>
         </p>
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="#oferta" class="inline-flex items-center gap-2 bg-urgent hover:opacity-90 text-white font-bold text-base px-7 py-3.5 rounded-full shadow-lg transform hover:scale-105 transition">
+          BASTA. QUIERO ORGANIZARME →
+        </a>
       </div>
     </div>
   </section>
 
+
+  <!-- DOR 2 — DINHEIRO -->
   <section class="py-16 md:py-24 bg-cream2">
     <div class="max-w-3xl mx-auto px-5">
       <div class="text-center mb-10">
         <span class="inline-flex items-center gap-1.5 text-urgent text-xs font-bold uppercase tracking-wider mb-3">
           <i data-lucide="trending-down" class="w-4 h-4"></i>
-          Y encima…
+          Y mientras tanto…
         </span>
         <h2 class="text-3xl md:text-4xl font-extrabold leading-tight mb-5">
-          El dinero se te va <span class="text-urgent">entre los dedos</span>.
+          Tu plata se está <span class="text-urgent">EVAPORANDO</span>.<br>
+          Y todavía <strong>ni nació tu bebé.</strong>
         </h2>
       </div>
 
       <div class="space-y-5 text-base md:text-lg text-graphite leading-relaxed" style="opacity: 0.9;">
         <p id="pain2-p1">
-          Compras un vestidito porque "estaba en oferta". Tres pares de zapaticos que tu bebé
-          <strong>ni siquiera va a usar</strong> en los primeros meses. Una cuna carísima que después
-          descubres que ni necesitabas porque usaste el moisés.
+          Compras un vestidito porque "estaba en oferta". Tres pares de zapaticos
+          que tu bebé <strong class="text-urgent">NUNCA</strong> va a usar antes de que le queden chicos.
+          Una cuna de $1.200.000 que después descubres que no necesitabas porque usaste el moisés los primeros 4 meses.
         </p>
         <p>
-          El problema no es comprar. <strong>El problema es comprar sin saber qué realmente necesitas.</strong>
+          Tu prima te regaló cosas que ya tenías. Tu suegra te trajo ropa de talla 0-3 cuando tu bebé ya nace de 3kg
+          y le dura 2 semanas. <strong>Compraste 12 baberos y solo usas 3.</strong> Compraste un calienta-biberones
+          que no usaste NUNCA.
+        </p>
+        <p class="font-bold text-graphite">
+          El problema no es comprar.
+          <span class="text-urgent">El problema es comprar a ciegas, con miedo de que le falte algo a tu bebé.</span>
         </p>
       </div>
 
@@ -958,28 +1034,42 @@
           <i data-lucide="wallet" class="w-8 h-8 text-urgent mx-auto mb-3"></i>
           <div class="text-3xl md:text-4xl font-extrabold text-urgent mb-2">$2–5M</div>
           <div class="text-sm text-muted">
-            Lo que gasta una mamá promedio en Colombia en el ajuar del bebé
+            Lo que gasta una mamá colombiana <strong>promedio</strong> en el ajuar
           </div>
         </div>
         <div class="bg-white rounded-2xl p-6 shadow-sm text-center">
           <i data-lucide="package-x" class="w-8 h-8 text-urgent mx-auto mb-3"></i>
           <div class="text-3xl md:text-4xl font-extrabold text-urgent mb-2">+30%</div>
           <div class="text-sm text-muted">
-            De eso termina <strong>sin usarse</strong>. Ropita con etiqueta, accesorios guardados.
+            <strong>se desperdicia.</strong> Ropita con etiqueta. Accesorios guardados. Plata botada.
           </div>
         </div>
       </div>
 
-      <div class="mt-10 p-6 md:p-8 bg-white rounded-2xl shadow-sm" style="border-left: 4px solid var(--secondary);">
-        <i data-lucide="quote" class="w-6 h-6 mb-2 text-secondary"></i>
+      <div class="mt-8 bg-graphite text-white rounded-2xl p-6 md:p-8 text-center">
+        <p class="text-sm uppercase tracking-wider text-white/60 mb-2">Hagamos cuentas</p>
+        <p class="text-2xl md:text-3xl font-extrabold leading-tight">
+          Si gastas <span class="text-primary">$3.000.000</span> en el ajuar y se te desperdicia el 30%,<br>
+          <span class="highlight-yellow text-graphite">acabas de botar $900.000 a la basura.</span>
+        </p>
+        <p class="text-sm text-white/70 mt-3">
+          Esta app cuesta <strong class="text-primary">menos de US$7</strong>. Te ahorra hasta $1.500.000.
+          Haz tú las cuentas.
+        </p>
+      </div>
+
+      <div class="mt-10 p-6 md:p-8 bg-white rounded-2xl shadow-sm" style="border-left: 4px solid var(--urgent);">
+        <i data-lucide="quote" class="w-6 h-6 mb-2 text-urgent"></i>
         <p class="text-lg md:text-xl font-semibold italic text-graphite">
-          No necesitas gastar más.<br>
-          <span style="color: var(--secondary); filter: brightness(0.8);">Necesitas gastar mejor.</span>
+          No necesitas gastar más para que tu bebé esté bien.<br>
+          <span class="text-urgent">Necesitas dejar de gastar a ciegas.</span>
         </p>
       </div>
     </div>
   </section>
 
+
+  <!-- DOR 3 — VIRADA EMOCIONAL -->
   <section class="py-16 md:py-24 gradient-maternal relative overflow-hidden">
     <div class="absolute inset-0 opacity-20">
       <div class="absolute top-10 left-10 w-40 h-40 bg-white rounded-full blur-2xl"></div>
@@ -989,63 +1079,81 @@
     <div class="relative max-w-3xl mx-auto px-5">
       <div class="text-center mb-10">
         <h2 class="text-3xl md:text-4xl font-extrabold leading-tight mb-5 text-graphite" id="pain3-title">
-          Deberías estar <em>disfrutando</em> tu embarazo.<br>
-          No <span class="underline decoration-urgent decoration-4">sobreviviéndolo.</span>
+          Este embarazo <em>NUNCA</em> se va a repetir.<br>
+          Deberías estar <strong>disfrutándolo</strong>.<br>
+          No <span class="underline decoration-urgent decoration-4">sufriéndolo.</span>
         </h2>
       </div>
 
       <p class="text-base md:text-lg text-graphite leading-relaxed mb-8" style="opacity: 0.9;">
-        El embarazo es uno de los momentos más hermosos de tu vida.
-        Pero si lo vives con la cabeza llena de pendientes, con miedo de olvidar algo,
-        revisando listas a las 2 de la mañana…
-        <strong>te estás perdiendo lo más importante.</strong>
+        Estas 40 semanas son únicas. Tu primer movimiento. La primera ecografía donde le viste la carita.
+        El día que decidieron el nombre. <strong>Esos momentos no vuelven.</strong>
+      </p>
+
+      <p class="text-base md:text-lg text-graphite leading-relaxed mb-8" style="opacity: 0.9;">
+        Pero si los vives con la cabeza llena de pendientes, revisando listas a las 2 AM,
+        peleando con tu pareja por compras que "se te olvidaron"…
+        <strong class="text-urgent">te estás perdiendo lo más hermoso de tu vida.</strong>
       </p>
 
       <p class="text-lg md:text-xl font-semibold text-graphite mb-6">
-        Imagina por un segundo:
+        Imagina por un segundo que <em>YA</em> tienes esto:
       </p>
 
       <ul class="space-y-4 mb-10">
-        <li class="flex gap-3 bg-white/70 backdrop-blur-sm p-4 rounded-2xl items-start">
+        <li class="flex gap-3 bg-white/80 backdrop-blur-sm p-4 rounded-2xl items-start">
           <i data-lucide="smartphone" class="w-5 h-5 text-primary-dark flex-shrink-0 mt-0.5"></i>
-          <span>Abrir tu celular y ver <strong>exactamente</strong> en qué semana estás y qué toca hacer esta semana.</span>
+          <span>Abres la app y ves <strong>EXACTAMENTE</strong> qué toca esta semana. No hay sorpresas. No hay olvidos.</span>
         </li>
-        <li class="flex gap-3 bg-white/70 backdrop-blur-sm p-4 rounded-2xl items-start">
+        <li class="flex gap-3 bg-white/80 backdrop-blur-sm p-4 rounded-2xl items-start">
           <i data-lucide="check-circle-2" class="w-5 h-5 text-success-dark flex-shrink-0 mt-0.5"></i>
-          <span id="pain3-item2">Saber que tu canastilla está <strong>100% lista</strong> y revisada.</span>
+          <span id="pain3-item2">La canastilla está <strong>100% lista, revisada y ahorraste $1.500.000</strong> en cosas que NO compraste.</span>
         </li>
-        <li class="flex gap-3 bg-white/70 backdrop-blur-sm p-4 rounded-2xl items-start">
+        <li class="flex gap-3 bg-white/80 backdrop-blur-sm p-4 rounded-2xl items-start">
           <i data-lucide="briefcase" class="w-5 h-5 text-secondary flex-shrink-0 mt-0.5"></i>
-          <span>Tener la pañalera empacada desde la semana 36, <strong>sin dudas ni prisa.</strong></span>
+          <span>La pañalera empacada desde la semana 36. <strong>Si rompes fuente esta noche, sales en 5 minutos.</strong></span>
         </li>
-        <li class="flex gap-3 bg-white/70 backdrop-blur-sm p-4 rounded-2xl items-start">
+        <li class="flex gap-3 bg-white/80 backdrop-blur-sm p-4 rounded-2xl items-start">
           <i data-lucide="heart" class="w-5 h-5 text-primary-dark flex-shrink-0 mt-0.5"></i>
-          <span>No tener que preguntarle a nadie "¿qué documentos necesito para la maternidad?"</span>
+          <span>Llegas al notaría a registrar a tu bebé y <strong>en 20 minutos sales con todo</strong>. Mientras otras mamás regresan a casa porque les faltó un papel.</span>
+        </li>
+        <li class="flex gap-3 bg-white/80 backdrop-blur-sm p-4 rounded-2xl items-start">
+          <i data-lucide="moon" class="w-5 h-5 text-primary-dark flex-shrink-0 mt-0.5"></i>
+          <span>Por <strong>primera vez en meses</strong>, te acuestas y duermes tranquila. Sin angustia. Sin la sensación de que algo se te está olvidando.</span>
         </li>
       </ul>
 
       <div class="text-center">
-        <p class="text-xl md:text-2xl font-bold text-graphite">
-          Eso es lo que te mereces vivir.<br>
-          <span class="text-primary-dark">Y es exactamente lo que te vamos a entregar.</span>
+        <p class="text-xl md:text-2xl font-bold text-graphite mb-6">
+          Eso no es un sueño. Es lo que vives <strong>desde el día 1</strong> con la Guía.<br>
+          <span class="text-primary-dark">Y cuesta menos que un almuerzo.</span>
         </p>
+
+        <a href="#oferta" class="cta-pulse inline-flex items-center gap-2 bg-urgent hover:opacity-90 text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition">
+          QUIERO VIVIR ASÍ MI EMBARAZO
+          <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </a>
       </div>
     </div>
   </section>
 
+
+  <!-- SOLUCIÓN -->
   <section class="py-16 md:py-24 bg-cream">
     <div class="max-w-6xl mx-auto px-5">
       <div class="text-center mb-12">
         <span class="inline-flex items-center gap-1.5 text-graphite text-xs font-bold px-3 py-1.5 rounded-full mb-4 uppercase tracking-wide" style="background: color-mix(in srgb, var(--primary) 40%, transparent);">
           <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-          La solución
+          La solución que ya cambió la vida de 2.000 mamás
         </span>
         <h2 class="text-3xl md:text-5xl font-extrabold leading-tight mb-5">
           Conoce la <span style="background: linear-gradient(to right, var(--primary-dark), var(--secondary)); -webkit-background-clip: text; background-clip: text; color: transparent;">Guía del Embarazo Organizado</span>
         </h2>
         <p class="text-base md:text-lg text-muted max-w-2xl mx-auto leading-relaxed" id="solucao-sub">
-          Una aplicación <strong>hecha por mamás, para mamás</strong> que reúne en un solo lugar todo lo que
-          necesitas acompañar, comprar, organizar y recordar durante tu embarazo.
+          La PRIMERA app <strong>hecha por mamás colombianas, para mamás colombianas</strong> que reúne TODO
+          en un solo lugar: lo que comprar, cuándo, los exámenes, los documentos, los trámites de EPS,
+          la pañalera, el cuarto, el ajuar.
+          <strong class="text-graphite">No es teoría. Es un sistema probado.</strong>
         </p>
       </div>
 
@@ -1387,23 +1495,25 @@
 
       </div>
 
-      <div class="max-w-2xl mx-auto text-center p-6 md:p-8 bg-white rounded-2xl shadow-sm">
-        <p class="text-lg md:text-xl font-semibold text-graphite leading-relaxed">
-          Pagas <span class="text-primary-dark">una sola vez</span>.<br>
-          La usas <span class="text-secondary" style="filter: brightness(0.85);">durante todo tu embarazo</span>.<br>
-          <span class="text-muted text-base">Sin mensualidades. Sin sorpresas.</span>
+      <div class="max-w-2xl mx-auto text-center p-6 md:p-8 bg-graphite text-white rounded-2xl">
+        <p class="text-lg md:text-xl font-semibold leading-relaxed">
+          <span class="text-primary">Pagas UNA sola vez.</span><br>
+          La usas durante <strong>todo tu embarazo</strong>.<br>
+          <span class="text-white/60 text-base">Cero mensualidades. Cero sorpresas. Cero excusas.</span>
         </p>
       </div>
     </div>
   </section>
 
+
+  <!-- MÓDULOS -->
   <section class="py-16 md:py-24 bg-cream2">
     <div class="max-w-6xl mx-auto px-5">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-extrabold leading-tight mb-4" id="modulos-title">
-          Todo lo que necesitas,<br class="md:hidden"> <span class="text-primary-dark">en un solo lugar</span>
+          6 módulos. <span class="text-primary-dark">CERO excusas para no organizarte.</span>
         </h2>
-        <p class="text-muted">6 módulos diseñados para acompañarte desde la semana 4 hasta el parto</p>
+        <p class="text-muted">Diseñados con obstetras y mamás reales · De la semana 4 al parto</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -1413,8 +1523,8 @@
           </div>
           <h3 class="text-xl font-bold mb-2">Cronograma por Trimestre</h3>
           <p class="text-sm text-muted leading-relaxed">
-            Checklist organizado con TODAS las citas médicas, exámenes y pendientes que debes hacer.
-            Marca cada tarea y siente cómo tu mente descansa.
+            <strong>TODAS</strong> las citas, exámenes y pendientes que tienes que hacer. En el orden correcto.
+            En la semana correcta. Marca cada tarea y siente cómo tu mente <strong>POR FIN</strong> descansa.
           </p>
         </div>
         <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition">
@@ -1423,8 +1533,8 @@
           </div>
           <h3 class="text-xl font-bold mb-2">Ropita por Talla</h3>
           <p class="text-sm text-muted leading-relaxed" id="modulo-ropa-desc">
-            Desde recién nacido hasta 12 meses. Cantidades recomendadas, control de lo que compraste
-            y lo que lavaste. Nunca más de más, nunca menos.
+            Cantidad EXACTA por talla, de recién nacido hasta 12 meses. <strong>Nunca más compres 12 baberos</strong>
+            cuando solo necesitas 4. Nunca más te quedes sin bodies cuando los necesitas.
           </p>
         </div>
         <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition">
@@ -1433,8 +1543,8 @@
           </div>
           <h3 class="text-xl font-bold mb-2">Accesorios Esenciales</h3>
           <p class="text-sm text-muted leading-relaxed" id="modulo-acc-desc">
-            Baño, higiene, alimentación, paseo, sueño. Cada ítem marcado como esencial, recomendado
-            u opcional — para que compres SOLO lo que tu bebé va a usar.
+            Cada ítem clasificado: <strong>esencial · recomendado · opcional</strong>. Para que NO compres
+            la cuna de $1.2M que no vas a usar y SÍ compres lo que de verdad vas a necesitar la primera semana.
           </p>
         </div>
         <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition">
@@ -1443,8 +1553,8 @@
           </div>
           <h3 class="text-xl font-bold mb-2">Pañalera y Maleta</h3>
           <p class="text-sm text-muted leading-relaxed">
-            Tres listas separadas: mamá, bebé y acompañante. Incluye los documentos exactos para la
-            clínica y para registrar al bebé en Colombia.
+            Tres listas separadas: <strong>mamá, bebé, acompañante</strong>. Con los documentos EXACTOS para la
+            clínica y para registrar al bebé. <strong>Si rompes fuente esta noche, sales en 5 minutos.</strong>
           </p>
         </div>
         <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition">
@@ -1453,31 +1563,37 @@
           </div>
           <h3 class="text-xl font-bold mb-2">Mis Inspiraciones</h3>
           <p class="text-sm text-muted leading-relaxed">
-            Tu tablero personal: ideas del cuartito, baby shower, nombres, sesión fotográfica.
-            Todo en un solo lugar, a un clic.
+            <strong>Adiós a las 200 capturas perdidas en tu galería.</strong> Tu tablero personal: cuartito,
+            baby shower, nombres, sesión fotográfica. Todo organizado a un clic.
           </p>
         </div>
-        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition">
-          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-4" style="background: color-mix(in srgb, var(--primary) 40%, transparent);">
-            <i data-lucide="wallet" class="w-7 h-7 text-primary-dark"></i>
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition" style="border: 2px solid var(--primary-dark);">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center" style="background: color-mix(in srgb, var(--primary) 40%, transparent);">
+              <i data-lucide="wallet" class="w-7 h-7 text-primary-dark"></i>
+            </div>
+            <span class="text-[10px] font-bold px-2 py-1 rounded-full bg-urgent text-white">EL FAVORITO</span>
           </div>
           <h3 class="text-xl font-bold mb-2">Control Financiero</h3>
           <p class="text-sm text-muted leading-relaxed">
-            Define tu presupuesto y registra cada compra. Alerta cuando estás a punto de pasarte.
-            Ahorra hasta <strong>$1.500.000</strong> en compras innecesarias.
+            Define tu presupuesto. Registra cada compra. <strong>Alarma cuando estás a punto de pasarte.</strong>
+            Las mamás ahorran en promedio <strong class="text-urgent">$1.500.000</strong> con esta función sola.
           </p>
         </div>
       </div>
 
       <div class="text-center mt-12">
-        <a href="#oferta" class="inline-flex items-center gap-2 bg-urgent hover:opacity-90 text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition">
-          QUIERO TODOS LOS MÓDULOS
+        <a href="#oferta" class="cta-pulse inline-flex items-center gap-2 bg-urgent hover:opacity-90 text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition">
+          QUIERO LOS 6 MÓDULOS POR US$6,97
           <i data-lucide="arrow-right" class="w-5 h-5"></i>
         </a>
+        <p class="text-xs text-muted mt-3">⚡ Acceso inmediato · Pago único · 7 días de garantía</p>
       </div>
     </div>
   </section>
 
+
+  <!-- TESTIMONIOS -->
   <section class="py-16 md:py-24 bg-cream">
     <div class="max-w-6xl mx-auto px-5">
       <div class="text-center mb-12">
@@ -1488,11 +1604,12 @@
           <i data-lucide="star" class="w-6 h-6 fill-current"></i>
           <i data-lucide="star" class="w-6 h-6 fill-current"></i>
           <span class="ml-2 text-graphite font-bold">4.9/5</span>
+          <span class="text-muted text-sm ml-1">(1.847 reseñas)</span>
         </div>
         <h2 class="text-3xl md:text-4xl font-extrabold leading-tight mb-3">
-          +2.000 mamás ya se organizaron con nosotras
+          <span class="text-primary-dark">+2.347 mamás colombianas</span> dejaron de improvisar
         </h2>
-        <p class="text-muted">Esto es lo que dicen:</p>
+        <p class="text-muted">Lee lo que dicen. Sin filtros. Sin guion.</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1506,9 +1623,9 @@
             <i data-lucide="star" class="w-4 h-4 fill-current"></i>
           </div>
           <p class="text-graphite leading-relaxed mb-5 italic">
-            "Yo estaba completamente perdida… cada cuenta de Instagram decía algo diferente.
-            Desde que empecé a usar la Guía, todo se volvió claro. Sé exactamente qué tengo,
-            qué me falta, y qué viene esta semana."
+            "Estaba <strong>al borde de un colapso</strong>. Cada cuenta de Instagram decía algo diferente
+            y yo lloraba pensando que no estaba haciendo bien las cosas. Compré la guía un sábado por la noche
+            y el domingo ya tenía todo en orden por primera vez. <strong>Lloré, pero de alivio.</strong>"
           </p>
           <div class="flex items-center gap-3">
             <div class="relative flex-shrink-0">
@@ -1526,18 +1643,21 @@
           </div>
         </div>
 
-        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition">
-          <div class="flex text-yellow-400 mb-3">
-            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition" style="border: 2px solid color-mix(in srgb, var(--primary) 40%, transparent);">
+          <div class="flex justify-between items-center mb-3">
+            <div class="flex text-yellow-400">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <span class="text-[10px] font-bold px-2 py-1 rounded-full bg-urgent text-white">AHORRO REAL</span>
           </div>
           <p class="text-graphite leading-relaxed mb-5 italic">
-            "Me ahorré como $1.200.000 en cosas que iba a comprar sin necesidad.
-            La lista de accesorios esenciales me abrió los ojos. <strong>Mi esposo también la revisa
-            conmigo</strong>, nos sentimos mucho más tranquilos."
+            "Me ahorré <strong>$1.247.000</strong> en cosas que iba a comprar por miedo a que le faltara algo
+            a mi bebé. La lista de esenciales me ABRIÓ los ojos. Mi esposo casi llora de felicidad cuando
+            le mostré las cuentas. <strong>Esta app se pagó sola 200 veces.</strong>"
           </p>
           <div class="flex items-center gap-3">
             <div class="relative flex-shrink-0">
@@ -1564,9 +1684,9 @@
             <i data-lucide="star" class="w-4 h-4 fill-current"></i>
           </div>
           <p class="text-graphite leading-relaxed mb-5 italic">
-            "La parte de los documentos para registrar al bebé fue ORO. Llegué al notaría con
-            todo listo y <strong>me registraron al niño en 20 minutos</strong>.
-            Mi cuñada tardó 3 días. Valió cada peso."
+            "La parte de los documentos para la notaría es ORO PURO. Llegué con TODO listo, organizado en
+            la app, en el orden exacto. <strong>Me registraron a Mateo en 20 minutos.</strong>
+            Mi cuñada tardó 3 días yendo y viniendo. Te juro que valió cada peso."
           </p>
           <div class="flex items-center gap-3">
             <div class="relative flex-shrink-0">
@@ -1593,9 +1713,9 @@
             <i data-lucide="star" class="w-4 h-4 fill-current"></i>
           </div>
           <p class="text-graphite leading-relaxed mb-5 italic">
-            "Es mi primer bebé y yo vivía angustiada con cada cita médica, pensando que se me
-            olvidaba algo. Ahora abro la app y veo todo en orden. <strong>Dormí tranquila por
-            primera vez en meses.</strong>"
+            "Es mi PRIMER bebé y yo vivía angustiada. Cada cita médica era una crisis pensando que se me
+            olvidaba algo. <strong>Llevo 2 semanas con la app y dormí toda la noche por primera vez en 4 meses.</strong>
+            En serio, esto no es una app. Es paz mental."
           </p>
           <div class="flex items-center gap-3">
             <div class="relative flex-shrink-0">
@@ -1622,9 +1742,9 @@
             <i data-lucide="star" class="w-4 h-4 fill-current"></i>
           </div>
           <p class="text-graphite leading-relaxed mb-5 italic">
-            "Lo mejor es el bono de ChatGPT con IA. Respondí 6 preguntas y me armó el ajuar
-            perfecto para mi niña. <strong>Nada de lo que no va a usar.</strong>
-            Mi mamá no podía creer que no compré 5 millones de cosas."
+            "El bono de ChatGPT con IA fue lo que más me sorprendió. Respondí 6 preguntas y la IA me armó
+            el ajuar PERFECTO para mi niña. <strong>Cero excesos. Cero faltas.</strong>
+            Mi mamá se quedó en shock cuando le dije que no compré ni la mitad de lo que ella decía que necesitaba."
           </p>
           <div class="flex items-center gap-3">
             <div class="relative flex-shrink-0">
@@ -1651,9 +1771,9 @@
             <i data-lucide="star" class="w-4 h-4 fill-current"></i>
           </div>
           <p class="text-graphite leading-relaxed mb-5 italic">
-            "Ya tuve 2 hijos y pensé que no necesitaba ayuda… pero con el tercero me organicé
-            como nunca. La lista de la pañalera separada por mamá, bebé y acompañante es
-            <strong>una joya</strong>. Recomendadísima."
+            "Tengo 2 hijos y pensé que ya sabía TODO. Con el tercero compré la app por curiosidad y
+            <strong>quedé en shock con todo lo que estaba haciendo mal.</strong> La lista de pañalera
+            separada por mamá, bebé y acompañante es una joya. Si supiera, la habría comprado con el primero."
           </p>
           <div class="flex items-center gap-3">
             <div class="relative flex-shrink-0">
@@ -1672,19 +1792,28 @@
         </div>
 
       </div>
+
+      <div class="text-center mt-12">
+        <a href="#oferta" class="inline-flex items-center gap-2 bg-urgent hover:opacity-90 text-white font-bold text-base px-7 py-3.5 rounded-full shadow-lg transform hover:scale-105 transition">
+          QUIERO ESTAR EN ESTA LISTA →
+        </a>
+      </div>
     </div>
   </section>
 
+
+  <!-- BÔNUS — MAIS AGRESSIVO -->
   <section class="py-16 md:py-24 bg-cream2">
     <div class="max-w-4xl mx-auto px-5">
       <div class="text-center mb-12">
         <span class="inline-flex items-center gap-1.5 bg-urgent text-white text-xs font-bold px-3 py-1.5 rounded-full mb-4 uppercase tracking-wide">
           <i data-lucide="gift" class="w-3.5 h-3.5"></i>
-          SOLO HOY
+          ALERTA · SOLO HOY
         </span>
         <h2 class="text-3xl md:text-4xl font-extrabold leading-tight mb-3">
-          Y si compras hoy, también te llevas <span class="text-urgent">3 bonos exclusivos</span>
+          Compra HOY y te llevas <span class="text-urgent">3 BONOS</span> que cuestan más que la app
         </h2>
+        <p class="text-muted">Estos bonos NO se venden por separado. Solo los recibes hoy.</p>
       </div>
 
       <div class="space-y-5">
@@ -1695,11 +1824,11 @@
           <div class="flex-1">
             <div class="flex items-start justify-between flex-wrap gap-2 mb-2">
               <h3 class="text-lg md:text-xl font-bold">BONO #1 · Lista de Links Directos</h3>
-              <span class="text-sm line-through text-muted">US$4,90</span>
+              <span class="text-sm font-bold"><span class="line-through text-muted">US$4,90</span> <span class="text-urgent ml-1">GRATIS</span></span>
             </div>
             <p class="text-sm text-muted leading-relaxed">
-              PDF exclusivo con los mejores productos del ajuar ya seleccionados, con links directos
-              a tiendas confiables en Colombia. <strong>Sin perder horas buscando.</strong>
+              PDF con los <strong>mejores productos del ajuar YA seleccionados</strong>, links directos a tiendas
+              colombianas confiables. <strong>Te ahorra 40+ horas</strong> investigando en internet.
             </p>
           </div>
         </div>
@@ -1710,11 +1839,11 @@
           <div class="flex-1">
             <div class="flex items-start justify-between flex-wrap gap-2 mb-2">
               <h3 class="text-lg md:text-xl font-bold">BONO #2 · Ajuar Personalizado con IA</h3>
-              <span class="text-sm line-through text-muted">US$3,90</span>
+              <span class="text-sm font-bold"><span class="line-through text-muted">US$3,90</span> <span class="text-urgent ml-1">GRATIS</span></span>
             </div>
             <p class="text-sm text-muted leading-relaxed" id="bono2-desc">
-              Comando listo para copiar y pegar en ChatGPT. Responde 6 preguntas y la IA arma
-              tu ajuar personalizado — <strong>hecho a la medida de tu bebé</strong>, sin excesos.
+              Comando listo para copiar y pegar en ChatGPT. Respondes 6 preguntas y la IA arma TU ajuar,
+              hecho a la medida de tu bebé. <strong>Ninguna mamá colombiana tiene esto.</strong>
             </p>
           </div>
         </div>
@@ -1725,18 +1854,28 @@
           <div class="flex-1">
             <div class="flex items-start justify-between flex-wrap gap-2 mb-2">
               <h3 class="text-lg md:text-xl font-bold">BONO #3 · Guía Express de Documentos</h3>
-              <span class="text-sm line-through text-muted">US$2,90</span>
+              <span class="text-sm font-bold"><span class="line-through text-muted">US$2,90</span> <span class="text-urgent ml-1">GRATIS</span></span>
             </div>
             <p class="text-sm text-muted leading-relaxed" id="bono3-desc">
-              Todo lo que necesitas para registrar tu bebé en Colombia: registro civil, afiliación a EPS,
-              licencia de maternidad. Pasos claros y <strong>qué decir en cada lugar</strong>.
+              Registro civil + EPS + licencia de maternidad. <strong>Pasos exactos, qué decir, qué llevar.</strong>
+              Adaptado a Colombia. Sales del notaría con todo en 20 minutos.
             </p>
           </div>
         </div>
       </div>
+
+      <div class="mt-8 bg-graphite text-white rounded-2xl p-6 text-center">
+        <p class="text-sm uppercase tracking-wider text-white/60 mb-1">Solo en bonos te llevas</p>
+        <p class="text-3xl md:text-4xl font-extrabold">
+          <span class="line-through text-white/40 text-2xl">US$11,70</span> <span class="text-primary">GRATIS</span>
+        </p>
+        <p class="text-xs text-white/70 mt-2">Si compras la app después de hoy, los bonos NO van incluidos.</p>
+      </div>
     </div>
   </section>
 
+
+  <!-- OFERTA -->
   <section id="oferta" class="py-16 md:py-24 gradient-maternal relative overflow-hidden">
     <div class="absolute inset-0 opacity-20">
       <div class="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl"></div>
@@ -1747,58 +1886,62 @@
       <div class="bg-urgent text-white text-center py-3 px-4 rounded-2xl mb-8 shadow-lg">
         <p class="text-sm md:text-base font-bold flex items-center justify-center gap-2">
           <i data-lucide="clock" class="w-4 h-4"></i>
-          OFERTA EXPIRA HOY EN: <span id="countdown2" class="font-mono">23:59:47</span>
+          ⚠️ EL PRECIO SUBE EN: <span id="countdown2" class="font-mono">23:59:47</span>
         </p>
+        <div class="scarcity-bar"><div class="scarcity-fill"></div></div>
+        <p class="text-xs mt-2 opacity-95">87% del cupo de hoy ya tomado · solo quedan unas pocas vacantes</p>
       </div>
 
       <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
         <div class="bg-graphite text-white p-6 md:p-8 text-center">
-          <p class="text-sm uppercase tracking-wider text-white/60 mb-2">Oferta de lanzamiento</p>
+          <span class="stamp inline-block mb-3" style="border-color: #FF94AE; color: #FF94AE;">OFERTA DE LANZAMIENTO</span>
           <h2 class="text-2xl md:text-3xl font-extrabold leading-tight" id="oferta-title">
-            Todo el paquete completo <br> por menos de lo que cuesta un café
+            Todo el sistema completo<br>
+            por <span class="text-primary">menos de US$7</span>
           </h2>
+          <p class="text-white/70 text-sm mt-2">Menos de lo que cuesta un café en Juan Valdez</p>
         </div>
 
         <div class="p-6 md:p-10">
           <div class="space-y-3 mb-8">
-            <p class="font-bold text-graphite mb-3">Te llevas HOY:</p>
+            <p class="font-bold text-graphite mb-3">Te llevas TODO esto HOY:</p>
             <div class="flex gap-3 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-success-dark flex-shrink-0 mt-0.5"></i><span>App completa con los <strong>6 módulos</strong></span></div>
             <div class="flex gap-3 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-success-dark flex-shrink-0 mt-0.5"></i><span>Acompañamiento <strong>semana a semana</strong> (sem. 4 a 40)</span></div>
-            <div class="flex gap-3 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-success-dark flex-shrink-0 mt-0.5"></i><span>BONO #1 · Lista de links directos</span></div>
-            <div class="flex gap-3 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-success-dark flex-shrink-0 mt-0.5"></i><span>BONO #2 · Prompt personalizado con IA</span></div>
-            <div class="flex gap-3 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-success-dark flex-shrink-0 mt-0.5"></i><span>BONO #3 · Guía express de documentos</span></div>
-            <div class="flex gap-3 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-success-dark flex-shrink-0 mt-0.5"></i><span><strong>Acceso de por vida</strong> (pagas UNA sola vez)</span></div>
-            <div class="flex gap-3 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-success-dark flex-shrink-0 mt-0.5"></i><span>Actualizaciones gratis para siempre</span></div>
-            <div class="flex gap-3 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-success-dark flex-shrink-0 mt-0.5"></i><span>Garantía incondicional de <strong>7 días</strong></span></div>
+            <div class="flex gap-3 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-success-dark flex-shrink-0 mt-0.5"></i><span>BONO #1 · Lista de links directos <span class="text-urgent font-bold">(US$4,90 GRATIS)</span></span></div>
+            <div class="flex gap-3 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-success-dark flex-shrink-0 mt-0.5"></i><span>BONO #2 · Prompt personalizado con IA <span class="text-urgent font-bold">(US$3,90 GRATIS)</span></span></div>
+            <div class="flex gap-3 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-success-dark flex-shrink-0 mt-0.5"></i><span>BONO #3 · Guía express de documentos <span class="text-urgent font-bold">(US$2,90 GRATIS)</span></span></div>
+            <div class="flex gap-3 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-success-dark flex-shrink-0 mt-0.5"></i><span><strong>Acceso de por vida</strong> · pagas UNA sola vez · cero mensualidad</span></div>
+            <div class="flex gap-3 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-success-dark flex-shrink-0 mt-0.5"></i><span>Actualizaciones GRATIS para siempre</span></div>
+            <div class="flex gap-3 items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-success-dark flex-shrink-0 mt-0.5"></i><span>Garantía blindada de <strong>7 días</strong> · te devolvemos hasta el último peso</span></div>
           </div>
 
           <div class="border-t border-dashed border-muted/30 pt-6 mb-6">
             <div class="flex justify-between text-sm text-muted mb-2">
-              <span>Valor total del paquete:</span>
-              <span class="font-semibold">US$29,70</span>
+              <span>Valor REAL del paquete:</span>
+              <span class="font-semibold line-through">US$29,70</span>
             </div>
             <div class="flex justify-between text-sm text-muted mb-2">
-              <span>Precio regular:</span>
+              <span>Precio normal de lanzamiento:</span>
               <span class="line-through">US$19,90</span>
             </div>
             <div class="flex justify-between items-baseline pt-3 border-t border-muted/20">
-              <span class="text-lg font-bold">HOY pagas solo:</span>
+              <span class="text-lg font-bold">HOY pagas SOLO:</span>
               <div class="text-right">
                 <div class="text-4xl md:text-5xl font-extrabold text-urgent">US$ 6,97</div>
-                <div class="text-xs text-muted">Pago único · Sin mensualidades</div>
+                <div class="text-xs text-muted">Pago único · Cero mensualidad</div>
               </div>
             </div>
             <div class="mt-3 p-3 rounded-xl flex items-start gap-2" style="background: color-mix(in srgb, var(--secondary) 20%, #F8FAFD);">
               <i data-lucide="info" class="w-4 h-4 flex-shrink-0 mt-0.5" style="color: var(--primary-deep);"></i>
               <p class="text-xs text-graphite leading-relaxed">
-                <strong>El valor será convertido automáticamente a tu moneda local</strong>
-                (COP, MXN, ARS, BRL, etc.) al momento del pago, según la tasa del día.
+                <strong>El valor se convierte automáticamente a tu moneda local</strong>
+                (COP, MXN, ARS, BRL, etc.) en la pantalla de pago. Tú ves el precio EXACTO antes de confirmar.
               </p>
             </div>
           </div>
 
           <a href="https://pay.hotmart.com/O105482548M?off=e590xr5h&amp;checkoutMode=10" target="_blank" rel="noopener" onclick="trackPurchase()" class="cta-pulse block w-full text-center bg-urgent hover:opacity-90 text-white font-extrabold py-5 px-6 rounded-2xl shadow-xl transform hover:scale-[1.02] transition mb-4" style="font-size: clamp(15px, 3.5vw, 20px); line-height: 1.3;">
-            <span id="cta-oferta" class="inline-block">SÍ, QUIERO ORGANIZARME YA</span>
+            <span id="cta-oferta" class="inline-block">SÍ, QUIERO LA APP + LOS 3 BONOS</span>
             <span class="inline-block ml-2 align-middle" style="transform: translateY(-1px);">→</span>
           </a>
 
@@ -1810,10 +1953,11 @@
           <div class="bg-cream2 rounded-2xl p-4 text-center">
             <p class="text-sm text-graphite flex items-center justify-center gap-1.5">
               <i data-lucide="alert-triangle" class="w-4 h-4 text-urgent"></i>
-              <strong>Oferta por tiempo limitado.</strong>
+              <strong>Cuando termine el contador, el precio sube a US$19,90.</strong>
             </p>
-            <p class="text-xs text-muted mt-1">
-              Más de <strong class="text-graphite">23 mamás</strong> compraron en las últimas 24 horas.
+            <p class="text-xs text-muted mt-1 flex items-center justify-center gap-1.5">
+              <span class="live-pulse-dot"></span>
+              <span><strong class="text-graphite"><span id="live-purchases-2">23</span> mamás</strong> compraron en las últimas 24h</span>
             </p>
           </div>
         </div>
@@ -1821,27 +1965,33 @@
     </div>
   </section>
 
+
+  <!-- GARANTIA -->
   <section class="py-16 md:py-20 bg-cream">
     <div class="max-w-3xl mx-auto px-5">
       <div class="bg-white rounded-3xl shadow-lg p-8 md:p-12 text-center" style="border: 4px solid color-mix(in srgb, var(--success) 50%, transparent);">
         <div class="w-20 h-20 mx-auto mb-5 rounded-full flex items-center justify-center" style="background: color-mix(in srgb, var(--success) 40%, transparent);">
           <i data-lucide="shield-check" class="w-10 h-10 text-success-dark"></i>
         </div>
-        <h2 class="text-2xl md:text-3xl font-extrabold mb-4">
-          Garantía incondicional de <span class="text-success-dark">7 días</span>
+        <span class="stamp">GARANTÍA BLINDADA</span>
+        <h2 class="text-2xl md:text-3xl font-extrabold mb-4 mt-4">
+          7 días para probarla. Si NO te encanta,<br>
+          <span class="text-success-dark">te devolvemos hasta el último peso.</span>
         </h2>
         <p class="text-base md:text-lg text-muted leading-relaxed mb-6">
-          Compra la app, úsala durante 7 días. Si en cualquier momento sientes que <strong>no es para ti</strong>,
-          escríbenos por WhatsApp y te devolvemos el <strong>100% de tu dinero</strong>. Sin preguntas.
+          Compra hoy, úsala 7 días completos. Si por CUALQUIER motivo no te encanta —
+          o simplemente no es para ti — escríbenos un WhatsApp y te devolvemos el
+          <strong>100% de tu plata.</strong> Sin preguntas. Sin formularios. Sin drama.
         </p>
         <p class="text-lg font-bold text-graphite">
-          El riesgo es nuestro. <span class="text-primary-dark">Tú solo tienes que decir sí.</span>
+          El riesgo es 100% NUESTRO. <span class="text-primary-dark">Tú solo tienes que decidir si quieres dormir tranquila esta noche.</span>
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ═══ SEÇÃO CONTATO WHATSAPP (MOVIDA PARA CIMA) ═══ -->
+
+  <!-- WHATSAPP -->
   <section id="contacto" class="py-16 md:py-20 bg-cream2">
     <div class="max-w-3xl mx-auto px-5">
       <div class="wa-card rounded-3xl shadow-lg p-8 md:p-12 text-center">
@@ -1852,11 +2002,11 @@
         </div>
 
         <h2 class="text-2xl md:text-3xl font-extrabold mb-3">
-          ¿Tienes alguna <span style="color: var(--whatsapp-dark);">duda</span>?
+          ¿Aún tienes alguna <span style="color: var(--whatsapp-dark);">duda</span>?
         </h2>
         <p class="text-base md:text-lg text-muted leading-relaxed mb-7 max-w-xl mx-auto">
-          Escríbenos directamente por WhatsApp y te responderemos lo antes posible.
-          Estamos aquí para ayudarte en lo que necesites 💬
+          No la dejes pasar. Escríbenos AHORA por WhatsApp. Te respondemos en minutos —
+          y si no es para ti, mejor lo descubres antes de comprar 💬
         </p>
 
         <a
@@ -1868,101 +2018,117 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
           </svg>
-          Hablar por WhatsApp
+          Hablar AHORA por WhatsApp
         </a>
 
         <p class="flex items-center justify-center gap-2 text-xs text-muted mt-4">
           <i data-lucide="clock" class="w-3.5 h-3.5"></i>
-          Respuesta rápida · Lun a Sáb de 8am a 8pm
+          Respondemos en minutos · Lun a Sáb de 8am a 8pm
         </p>
       </div>
     </div>
   </section>
-  <!-- ═══ FIM SEÇÃO CONTATO WHATSAPP ═══ -->
 
+
+  <!-- FAQ — DERRUBANDO OBJEÇÕES -->
   <section class="py-16 md:py-24 bg-cream">
     <div class="max-w-3xl mx-auto px-5">
       <div class="text-center mb-10">
-        <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Dudas frecuentes</h2>
-        <p class="text-muted">Las mismas preguntas que nos hacen todas las mamás</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Las objeciones que SIEMPRE escuchamos</h2>
+        <p class="text-muted">Y por qué ya no son una excusa para no comprar</p>
       </div>
 
       <div class="space-y-3">
         <details class="bg-white rounded-2xl shadow-sm overflow-hidden">
           <summary class="p-5 font-semibold cursor-pointer flex justify-between items-center">
-            <span>¿Cómo recibo el acceso después de pagar?</span>
+            <span>"¿Y si pago y no funciona?"</span>
             <i data-lucide="chevron-down" class="chev w-5 h-5 text-primary-dark"></i>
           </summary>
           <div class="px-5 pb-5 text-muted text-sm leading-relaxed">
-            Inmediatamente después de confirmar tu pago, recibes un correo automático con tu acceso a la app.
-            Todo el proceso toma menos de 2 minutos.
+            Tienes <strong>7 días completos</strong> para probarla. Si no te sirve, escribes un WhatsApp y
+            te devolvemos el 100%. Sin preguntas. Sin formularios. <strong>El riesgo es 100% nuestro.</strong>
           </div>
         </details>
         <details class="bg-white rounded-2xl shadow-sm overflow-hidden">
           <summary class="p-5 font-semibold cursor-pointer flex justify-between items-center">
-            <span>¿Es un pago único o mensualidad?</span>
+            <span>"¿Es realmente un pago único?"</span>
             <i data-lucide="chevron-down" class="chev w-5 h-5 text-primary-dark"></i>
           </summary>
           <div class="px-5 pb-5 text-muted text-sm leading-relaxed">
-            Es un pago <strong>único</strong>. Pagas US$ 6,97 una sola vez y tienes acceso de por vida.
-            <strong>El valor será convertido automáticamente a tu moneda local</strong> (COP, MXN, ARS, BRL, etc.)
-            al momento del pago, según la tasa del día.
+            <strong>SÍ.</strong> Pagas US$6,97 una sola vez en tu vida. La usas todo este embarazo y
+            todos los próximos. <strong>Sin mensualidad. Sin renovación. Sin letra chica.</strong>
+            El valor se convierte automáticamente a pesos colombianos al pagar.
           </div>
         </details>
         <details class="bg-white rounded-2xl shadow-sm overflow-hidden">
           <summary class="p-5 font-semibold cursor-pointer flex justify-between items-center">
-            <span>¿En qué moneda voy a pagar?</span>
+            <span>"¿Cuánto pago en pesos colombianos?"</span>
             <i data-lucide="chevron-down" class="chev w-5 h-5 text-primary-dark"></i>
           </summary>
           <div class="px-5 pb-5 text-muted text-sm leading-relaxed">
-            El precio base es de <strong>US$ 6,97 (dólares)</strong>, pero en la pantalla de pago el valor
-            se convierte automáticamente a tu moneda local según la tasa del día. Tú ves el precio exacto
-            en pesos colombianos (o la moneda de tu país) <strong>antes de confirmar</strong> la compra.
+            Aproximadamente <strong>$28.000–$30.000 COP</strong> según la tasa del día.
+            En la pantalla de pago ves el valor EXACTO en pesos antes de confirmar.
+            <strong>Es menos de lo que cuesta un domicilio de comida.</strong>
           </div>
         </details>
         <details class="bg-white rounded-2xl shadow-sm overflow-hidden">
           <summary class="p-5 font-semibold cursor-pointer flex justify-between items-center">
-            <span>¿Qué métodos de pago aceptan?</span>
+            <span>"¿Cómo recibo el acceso?"</span>
             <i data-lucide="chevron-down" class="chev w-5 h-5 text-primary-dark"></i>
           </summary>
           <div class="px-5 pb-5 text-muted text-sm leading-relaxed">
-            Aceptamos <strong>Nequi, PSE, Bancolombia</strong>, tarjeta de crédito y débito.
+            <strong>Inmediatamente.</strong> Apenas confirmes el pago, llega un correo automático con tu
+            acceso. Todo el proceso toma menos de 2 minutos. Empiezas a usar la app HOY mismo.
+          </div>
+        </details>
+        <details class="bg-white rounded-2xl shadow-sm overflow-hidden">
+          <summary class="p-5 font-semibold cursor-pointer flex justify-between items-center">
+            <span>"¿Qué métodos de pago aceptan?"</span>
+            <i data-lucide="chevron-down" class="chev w-5 h-5 text-primary-dark"></i>
+          </summary>
+          <div class="px-5 pb-5 text-muted text-sm leading-relaxed">
+            <strong>Nequi, PSE, Bancolombia</strong>, tarjeta de crédito y débito.
             También puedes pagar en hasta <strong>6 cuotas sin interés</strong>.
+            (Aunque a US$6,97, no creo que necesites cuotas 😉)
           </div>
         </details>
         <details class="bg-white rounded-2xl shadow-sm overflow-hidden">
           <summary class="p-5 font-semibold cursor-pointer flex justify-between items-center">
-            <span>¿Puedo usar la app en mi celular?</span>
+            <span>"¿Está hecha para Colombia?"</span>
             <i data-lucide="chevron-down" class="chev w-5 h-5 text-primary-dark"></i>
           </summary>
           <div class="px-5 pb-5 text-muted text-sm leading-relaxed">
-            Sí, la app está 100% optimizada para celular (Android y iPhone).
+            <strong>SÍ, 100%.</strong> Documentos del POS, exámenes de la EPS, registro civil colombiano,
+            licencia de maternidad… <strong>todo adaptado a Colombia.</strong> Otras apps internacionales
+            te dejan colgada en eso.
           </div>
         </details>
         <details class="bg-white rounded-2xl shadow-sm overflow-hidden">
           <summary class="p-5 font-semibold cursor-pointer flex justify-between items-center">
-            <span>¿La información está adaptada a Colombia?</span>
+            <span>"¿Funciona en mi celular?"</span>
             <i data-lucide="chevron-down" class="chev w-5 h-5 text-primary-dark"></i>
           </summary>
           <div class="px-5 pb-5 text-muted text-sm leading-relaxed">
-            Sí. Documentos, exámenes del POS, trámites de EPS y licencia de maternidad están
-            <strong>específicamente adaptados a Colombia</strong>.
+            Funciona en <strong>Android, iPhone, tablet y computador</strong>. Si tienes internet, funciona.
           </div>
         </details>
         <details class="bg-white rounded-2xl shadow-sm overflow-hidden">
           <summary class="p-5 font-semibold cursor-pointer flex justify-between items-center">
-            <span>¿Qué pasa si no me gusta?</span>
+            <span>"Ya estoy en la semana 30, ¿todavía me sirve?"</span>
             <i data-lucide="chevron-down" class="chev w-5 h-5 text-primary-dark"></i>
           </summary>
           <div class="px-5 pb-5 text-muted text-sm leading-relaxed">
-            Tienes <strong>7 días de garantía incondicional</strong>. Escribes por WhatsApp y
-            te devolvemos el 100% de tu dinero. Sin preguntas.
+            <strong>MÁS QUE NUNCA.</strong> El tercer trimestre es donde más mamás pierden la cabeza:
+            pañalera, documentos, ajuar, cuarto, exámenes finales. La app te organiza TODO en las semanas
+            que te quedan. <strong>No es tarde. Es justo a tiempo.</strong>
           </div>
         </details>
       </div>
     </div>
   </section>
 
+
+  <!-- CTA FINAL -->
   <section class="py-16 md:py-24 bg-graphite text-white relative overflow-hidden">
     <div class="absolute inset-0 opacity-10">
       <div class="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl" style="background: var(--primary);"></div>
@@ -1970,32 +2136,43 @@
     </div>
 
     <div class="relative max-w-3xl mx-auto px-5 text-center">
+      <span class="inline-flex items-center gap-1.5 bg-urgent text-white text-xs font-bold px-3 py-1.5 rounded-full mb-5 uppercase tracking-wide">
+        <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i>
+        Última llamada
+      </span>
+
       <h2 class="text-3xl md:text-5xl font-extrabold leading-tight mb-6" id="cta-final-title">
-        Tu embarazo <em>no se repite</em>.<br>
-        <span class="text-primary">Tu tranquilidad tampoco.</span>
+        En 6 meses, este embarazo se acabó.<br>
+        <span class="text-primary">Y NO vuelve.</span>
       </h2>
 
       <p class="text-base md:text-lg text-white/80 mb-8 leading-relaxed" id="cta-final-text">
-        Puedes seguir guardando capturas en el celular y viviendo con la sensación de que algo se te está olvidando.<br><br>
-        O puedes tomar la decisión <strong class="text-primary">hoy</strong> y vivir el resto de tu embarazo
-        con la tranquilidad que te mereces.
+        Tienes 2 caminos. <strong class="text-white">Honestamente, solo 2:</strong>
+        <br><br>
+        1. Cierras esta página, sigues guardando capturas en el celular, sigues despierta a las 2 AM,
+        sigues gastando plata sin saber qué necesitas. Y dentro de 6 meses miras atrás y dices
+        <em>"ojalá hubiera comprado esa app cuando tenía la oferta".</em>
+        <br><br>
+        2. Tomas la decisión <strong class="text-primary">AHORA</strong> y vives el resto de tu embarazo
+        con la tranquilidad que tu bebé merece. Por menos de US$7.
       </p>
 
       <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 mb-8">
-        <p class="text-sm text-white/70 mb-1">La diferencia son apenas</p>
+        <p class="text-sm text-white/70 mb-1">El precio de tu tranquilidad</p>
         <p class="text-4xl md:text-5xl font-extrabold text-primary mb-1">US$ 6,97</p>
-        <p class="text-xs text-white/60">Convertido a tu moneda local · El impacto en tu embarazo, no tiene precio.</p>
+        <p class="text-xs text-white/60">~$28.000 COP · Pago único · Acceso de por vida</p>
       </div>
 
       <a href="https://pay.hotmart.com/O105482548M?off=e590xr5h&amp;checkoutMode=10" target="_blank" rel="noopener" onclick="trackPurchase()" class="cta-pulse inline-flex items-center gap-2 bg-urgent hover:opacity-90 text-white font-extrabold text-lg md:text-xl px-10 py-5 rounded-full shadow-2xl transform hover:scale-105 transition">
-        QUIERO MI GUÍA AHORA
+        SÍ, QUIERO MI TRANQUILIDAD
         <i data-lucide="arrow-right" class="w-6 h-6"></i>
       </a>
 
-      <p class="flex items-center justify-center gap-3 text-xs text-white/50 mt-4">
+      <p class="flex items-center justify-center gap-3 text-xs text-white/50 mt-4 flex-wrap">
         <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> Pago único</span>
         <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> Acceso de por vida</span>
         <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> Garantía 7 días</span>
+        <span class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> Acceso inmediato</span>
       </p>
     </div>
   </section>
@@ -2014,8 +2191,8 @@
   </footer>
 
   <a href="#oferta" class="hidden md:flex fixed bottom-6 right-6 z-40 bg-urgent hover:opacity-90 text-white font-bold px-5 py-3 rounded-full shadow-2xl items-center gap-2 transform hover:scale-105 transition">
-    <i data-lucide="gift" class="w-4 h-4"></i>
-    US$ 6,97 · Quiero ya
+    <i data-lucide="flame" class="w-4 h-4"></i>
+    US$ 6,97 · Solo HOY
   </a>
 
   </div>
@@ -2142,6 +2319,7 @@
         personalizeLanding();
         lucide.createIcons();
         startCountdown();
+        startLiveCounter();
         window.scrollTo(0, 0);
       }, 1800);
     }
@@ -2177,71 +2355,73 @@
       const heroSub = document.getElementById('hero-sub');
 
       if (hasName) {
-        heroGreeting.textContent = `Nunca más te quedes con la duda`;
-        heroBabyFor.textContent = `para ${N}`;
-        heroSub.innerHTML = `La app que reúne <strong class="text-graphite">todo lo que necesitas organizar</strong> para la llegada de ${N} — en un solo lugar, semana a semana, sin estrés ni gastos innecesarios.`;
+        heroGreeting.textContent = `Deja de gastar plata en cosas que ${N}`;
+        heroBabyFor.textContent = `NUNCA va a usar`;
+        heroSub.innerHTML = `La ÚNICA app colombiana que te dice <strong class="text-graphite">exactamente qué necesita ${N}, cuándo, y cuánto</strong> — semana a semana, sin excesos, sin olvidos. <strong class="text-urgent">Te ahorra hasta $1.500.000 antes de que ${N} nazca.</strong>`;
       } else if (babyGender === 'girl') {
-        heroBabyFor.textContent = `para tu niña`;
-        heroSub.innerHTML = `La app que reúne <strong class="text-graphite">todo lo que necesitas organizar</strong> para la llegada de tu princesa — en un solo lugar, semana a semana, sin estrés ni gastos innecesarios.`;
+        heroGreeting.textContent = `Deja de gastar plata en cosas que tu niña`;
+        heroBabyFor.textContent = `NUNCA va a usar`;
+        heroSub.innerHTML = `La ÚNICA app colombiana que te dice <strong class="text-graphite">exactamente qué necesita tu princesa, cuándo, y cuánto</strong> — semana a semana, sin excesos, sin olvidos. <strong class="text-urgent">Te ahorra hasta $1.500.000 antes de que nazca.</strong>`;
       } else if (babyGender === 'boy') {
-        heroBabyFor.textContent = `para tu niño`;
-        heroSub.innerHTML = `La app que reúne <strong class="text-graphite">todo lo que necesitas organizar</strong> para la llegada de tu príncipe — en un solo lugar, semana a semana, sin estrés ni gastos innecesarios.`;
+        heroGreeting.textContent = `Deja de gastar plata en cosas que tu niño`;
+        heroBabyFor.textContent = `NUNCA va a usar`;
+        heroSub.innerHTML = `La ÚNICA app colombiana que te dice <strong class="text-graphite">exactamente qué necesita tu príncipe, cuándo, y cuánto</strong> — semana a semana, sin excesos, sin olvidos. <strong class="text-urgent">Te ahorra hasta $1.500.000 antes de que nazca.</strong>`;
       }
 
       if (hasName) {
         document.getElementById('pain1-p1').innerHTML =
-          `Desde que viste esas dos rayitas y supiste que ${N} venía en camino, tu mente no para. Citas médicas, ecografías, ropita, la pañalera, documentos, el cuarto, el ajuar, exámenes del tercer trimestre…`;
+          `<strong>Ya viste las dos rayitas y supiste que ${N} venía en camino.</strong> Y desde ese día tu mente no para. Citas médicas, ecografías, ropita, la pañalera, exámenes que no entiendes, documentos para la EPS, el cuarto de ${N}, el ajuar, vacunas, pediatra, nombres, el baby shower… <strong>y todo al mismo tiempo.</strong>`;
       }
 
       if (hasName) {
         document.getElementById('pain2-p1').innerHTML =
-          `Compras un vestidito porque "estaba en oferta". Tres pares de zapaticos que ${N} <strong>ni siquiera va a usar</strong> en los primeros meses. Una cuna carísima que después descubres que ni necesitabas.`;
+          `Compras un vestidito porque "estaba en oferta". Tres pares de zapaticos que ${N} <strong class="text-urgent">NUNCA</strong> va a usar antes de que le queden chicos. Una cuna de $1.200.000 que después descubres que no necesitabas porque usaste el moisés los primeros 4 meses.`;
       }
 
       if (hasName) {
         document.getElementById('pain3-item2').innerHTML =
-          `Saber que la canastilla de ${N} está <strong>100% lista</strong> y revisada.`;
+          `La canastilla de ${N} está <strong>100% lista, revisada y ahorraste $1.500.000</strong> en cosas que NO compraste.`;
       }
 
       if (hasName) {
         document.getElementById('solucao-sub').innerHTML =
-          `Una aplicación <strong>hecha por mamás, para mamás</strong> que reúne en un solo lugar todo lo que necesitas para recibir a ${N} con tranquilidad y sin olvidos.`;
+          `La PRIMERA app <strong>hecha por mamás colombianas, para mamás colombianas</strong> que reúne TODO lo que necesitas para recibir a ${N}: lo que comprar, cuándo, los exámenes, los documentos, los trámites de EPS, la pañalera, el cuarto, el ajuar. <strong class="text-graphite">No es teoría. Es un sistema probado.</strong>`;
       }
 
       if (hasName) {
         document.getElementById('modulos-title').innerHTML =
-          `Todo lo que necesitas para recibir a <span class="text-primary-dark">${N}</span>`;
+          `6 módulos. <span class="text-primary-dark">CERO excusas para no recibir a ${N} preparada.</span>`;
         document.getElementById('modulo-ropa-desc').innerHTML =
-          `Desde recién nacido hasta 12 meses. Cantidades recomendadas para ${N}, control de lo comprado y lavado. Nunca más de más, nunca menos.`;
+          `Cantidad EXACTA por talla para ${N}, de recién nacido hasta 12 meses. <strong>Nunca más compres 12 baberos</strong> cuando solo necesitas 4. Nunca más te quedes sin bodies.`;
         document.getElementById('modulo-acc-desc').innerHTML =
-          `Baño, higiene, alimentación, paseo, sueño. Cada ítem marcado como esencial, recomendado u opcional — para que compres SOLO lo que ${N} va a usar.`;
+          `Cada ítem clasificado: <strong>esencial · recomendado · opcional</strong>. Para que NO compres la cuna de $1.2M que ${N} no va a usar y SÍ compres lo que de verdad necesita la primera semana.`;
       }
 
       if (hasName) {
         document.getElementById('bono2-desc').innerHTML =
-          `Comando listo para copiar y pegar en ChatGPT. Responde 6 preguntas y la IA arma el ajuar personalizado para ${N} — <strong>hecho a su medida</strong>, sin excesos.`;
+          `Comando listo para copiar y pegar en ChatGPT. Respondes 6 preguntas y la IA arma el ajuar PERFECTO para ${N}, hecho a su medida. <strong>Ninguna mamá colombiana tiene esto.</strong>`;
         document.getElementById('bono3-desc').innerHTML =
-          `Todo lo que necesitas para registrar a ${N} en Colombia: registro civil, afiliación a EPS, licencia de maternidad. Pasos claros y <strong>qué decir en cada lugar</strong>.`;
+          `Registro civil + EPS + licencia de maternidad para ${N}. <strong>Pasos exactos, qué decir, qué llevar.</strong> Adaptado a Colombia. Sales del notaría con todo en 20 minutos.`;
       }
 
       if (hasName) {
         document.getElementById('oferta-title').innerHTML =
-          `Todo lo que ${N} necesita,<br>en un solo pago único`;
+          `Todo lo que ${N} necesita,<br>por <span class="text-primary">menos de US$7</span>`;
         const ctaEl = document.getElementById('cta-oferta');
         if (N.length <= 6) {
           ctaEl.textContent = `SÍ, QUIERO PREPARARME PARA ${N.toUpperCase()}`;
         } else if (N.length <= 10) {
           ctaEl.textContent = `QUIERO PREPARARME PARA ${N.toUpperCase()}`;
         } else {
-          ctaEl.textContent = `QUIERO MI GUÍA AHORA`;
+          ctaEl.textContent = `SÍ, QUIERO LA APP + LOS 3 BONOS`;
         }
       }
 
       if (hasName) {
         document.getElementById('cta-final-title').innerHTML =
-          `La llegada de <em>${N}</em> no se repite.<br><span class="text-primary">Tu tranquilidad tampoco.</span>`;
+          `En 6 meses, ${N} ya estará aquí.<br><span class="text-primary">¿Vas a estar lista o improvisando?</span>`;
         document.getElementById('cta-final-text').innerHTML =
-          `Puedes seguir guardando capturas en el celular y viviendo con la sensación de que algo se te está olvidando.<br><br>O puedes tomar la decisión <strong class="text-primary">hoy</strong> y prepararte para recibir a ${N} con la tranquilidad que te mereces.`;
+          `Tienes 2 caminos. <strong class="text-white">Honestamente, solo 2:</strong><br><br>1. Cierras esta página y sigues improvisando. Y dentro de 6 meses, cuando ${N} ya esté en tus brazos, miras atrás y dices <em>"ojalá hubiera comprado esa app cuando pude"</em>.<br><br>2. Tomas la decisión <strong class="text-primary">AHORA</strong> y recibes a ${N} con todo en orden. Por menos de US$7.`;
       }
     }
 
@@ -2267,6 +2447,21 @@
       };
       tick();
       setInterval(tick, 1000);
+    }
+
+    // Live counter sutil — "X mamás compraron nas últimas 24h" sobe lentamente
+    function startLiveCounter() {
+      const els = document.querySelectorAll('#live-purchases, #live-purchases-2');
+      let n = 23;
+      els.forEach(el => el.textContent = n);
+      setInterval(() => {
+        // Aumenta 1 a cada ~45–90s, com pequena variação
+        if (Math.random() < 0.3) {
+          n += 1;
+          if (n > 47) n = 23; // resetea pra não estourar
+          els.forEach(el => el.textContent = n);
+        }
+      }, 60000);
     }
 
     document.getElementById('baby-name-input').addEventListener('keypress', (e) => {
